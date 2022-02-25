@@ -16,13 +16,16 @@ const useStyles = makeStyles((theme) => ({
     marginLeft: theme.spacing(1),
     display: "flex",
   },
+
   logo: {
     flexGrow: "1",
     cursor: "pointer",
   },
+
   link: {
     textDecoration: "none",
-    color: "#FFD39A",
+    color: "#64f227",
+    // 64f227 blight green color
     fontSize: "20px",
     marginLeft: theme.spacing(5),
     "&:hover": {
@@ -30,6 +33,31 @@ const useStyles = makeStyles((theme) => ({
       borderBottom: "1px solid white",
     },
   },
+
+  appbar: {
+
+    
+    position: "static",
+    background: '#5702a1',
+      // 5702a1 dark-purple color
+    // "&:before": {
+    //   width: "200%",
+    //   height: "100%",
+    // //  top 0
+    //   right: "100%",
+    //   backgroundColor: "#64f227",
+    // //   64f227 blight green color 
+    //   content: '" "',
+    //   position: "absolute",
+    //   transform: ` rotateZ(-60deg)`,
+    //   [theme.breakpoints.down("sm")]: {
+    //     height: "180%",
+    //   },
+    // },
+  },
+
+
+
 }));
 
 
@@ -39,10 +67,9 @@ export const NavBar = () => {
   const isMobile = useMediaQuery(theme.breakpoints.down("md"));
 
   return (
-    <AppBar 
-      position="static"
-      style={{ background: '#5702a1' }}
-      // 5702a1 dark-purple color
+    <AppBar className={classes.appbar}
+    
+      
     >
       <CssBaseline />
       <Toolbar>
