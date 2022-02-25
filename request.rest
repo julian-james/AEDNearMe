@@ -1,5 +1,6 @@
-POST http://localhost:8000/aed/
+POST http://localhost:8000/aed/upload/
 Content-Type: application/json
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjQ1ODExNTExLCJpYXQiOjE2NDU4MTEyMTEsImp0aSI6ImMzY2ZjZTAxMzk3NTQ0NGJiYTMzMGMxOGZkZGVhNWVkIiwidXNlcl9pZCI6MSwidXNlcm5hbWUiOiJ0cmV2b3IifQ.efhNEWKRtesQn9RZ_xg319mcV0gdHm_9tSs3wJhMJIw
 
 {
     "username": "trevor",
@@ -9,3 +10,33 @@ Content-Type: application/json
     "access": "public",
     "approved": "True"
 }
+
+###
+
+POST http://localhost:8000/users/register
+Content-Type: application/json
+
+
+
+###
+
+POST http://localhost:8000/users/login
+Content-Type: application/json
+
+{
+    "username": "trevor",
+    "password": "gotMints365"
+}
+
+
+
+###
+
+POST http://localhost:8000/users/logout
+Content-Type: application/json
+
+{
+    "username": "trevor",
+    "refresh": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTY0NTg5NzYxMSwiaWF0IjoxNjQ1ODExMjExLCJqdGkiOiI5ZTk1M2UzOTQ5MDg0Y2JmYTc1YWRiZWU2OGEwMzE5OSIsInVzZXJfaWQiOjEsInVzZXJuYW1lIjoidHJldm9yIn0.HHhPvPMhFVhQag9JEpyyWQ8Pmik0ZLrimE3JFmmQFx0"
+}
+
