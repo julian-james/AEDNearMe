@@ -5,6 +5,8 @@ import Quiz from "./pages/Quiz/Quiz";
 import CPR from "./pages/CPR/CPR";
 import Choking from "./pages/Choking/Choking";
 import { NavBar } from "./components/NavBar/NavBar";
+import { Footer } from "./components/Footer/Footer.js";
+
 
 function App() {
   return (
@@ -17,6 +19,8 @@ function App() {
           <Route path='/choking' element={<Choking />} />
           <Route path='*' element={<p>nothing to see here, move on mate.</p>} />
       </Routes>
+
+      <Footer/>
 
       <Outlet />
     </div>

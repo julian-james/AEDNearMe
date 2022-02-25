@@ -1,30 +1,32 @@
-import React from 'react'
-import { Link } from "react-router-dom"
+import React from "react";
 import {
   AppBar,
   Toolbar,
   CssBaseline,
-  Typography,
   makeStyles,
+  useTheme,
+  useMediaQuery,
 } from "@material-ui/core";
+import { Link } from "react-router-dom";
+import DrawerComponent from "./Drawer/Drawer.js";
 
 
 const useStyles = makeStyles((theme) => ({
   navlinks: {
-    marginLeft: theme.spacing(10),
+    marginLeft: theme.spacing(1),
     display: "flex",
   },
- logo: {
+  logo: {
     flexGrow: "1",
     cursor: "pointer",
   },
   link: {
     textDecoration: "none",
-    color: "white",
+    color: "#FFD39A",
     fontSize: "20px",
-    marginLeft: theme.spacing(20),
+    marginLeft: theme.spacing(5),
     "&:hover": {
-      color: "yellow",
+      color: "#FFD39A",
       borderBottom: "1px solid white",
     },
   },
@@ -32,54 +34,29 @@ const useStyles = makeStyles((theme) => ({
 
 
 export const NavBar = () => {
-
   const classes = useStyles();
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down("md"));
 
   return (
-    <AppBar position="static">
+    <AppBar 
+      position="static"
+      style={{ background: '#9A0680' }}
+    >
       <CssBaseline />
       <Toolbar>
-        <Typography variant="h4" className={classes.logo}>
-          AEDnearMe
-        </Typography>
+        {isMobile ? (
+          <DrawerComponent />
+        ) : (
           <div className={classes.navlinks}>
-            <Link to="/" className={classes.link}>
-              Home
-            </Link>
-            <Link to="/quiz" className={classes.link}>
-              Quiz
-            </Link>
-            <Link to="/upload" className={classes.link}>
-              New AED?
-            </Link>
-            <Link to="/cpr" className={classes.link}>
-            CPR
-            </Link>
-            <Link to="/faq" className={classes.link}>
-              FAQ
-            </Link>
+          <Link to="/" className={classes.link}>Home</Link>
+          <Link to="/quiz" className={classes.link}>Quiz</Link>
+          <Link to="/upload" className={classes.link}>New AED?</Link>
+          <Link to="/cpr" className={classes.link}>CPR</Link>
+          <Link to="/faq" className={classes.link}>FAQ</Link>
           </div>
+        )}
       </Toolbar>
     </AppBar>
   );
 }
-
-
-  // return (
-  //   <div>
-  //       <nav>
-  //           <ul>
-  //               <li>
-  //               <Link to="/">Home</Link>
-  //               </li>
-  //               <li>
-  //               <Link to="/quiz">Quiz</Link>
-  //               </li>
-  //               <li>
-  //               <Link to="/upload">New AED?</Link>
-  //               </li>
-  //           </ul>
-  //       </nav>
-  //   </div>
-  // )
-
