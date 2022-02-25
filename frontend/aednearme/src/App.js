@@ -7,6 +7,7 @@ import Choking from "./pages/Choking/Choking";
 import Login from "./pages/Login/Login";
 import Register from "./pages/Register/Register";
 import Upload from "./pages/Upload/Upload";
+import FAQ from "./pages/FAQ/FAQ";
 import { NavBar } from "./components/NavBar/NavBar";
 import { Footer } from "./components/Footer/Footer.js";
 
@@ -23,6 +24,7 @@ function App() {
           <Route path='/login' element={<Login />} />
           <Route path='/register' element={<Register />} />
           <Route path='/upload' element={<Upload />} />
+          <Route path='/faq' element={<FAQ />} />
           <Route path='*' element={<p>nothing to see here, move on mate.</p>} />
       </Routes>
 
