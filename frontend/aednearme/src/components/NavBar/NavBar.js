@@ -41,7 +41,8 @@ export const NavBar = () => {
   return (
     <AppBar 
       position="static"
-      style={{ background: '#9A0680' }}
+      style={{ background: '#5702a1' }}
+      // 5702a1 dark-purple color
     >
       <CssBaseline />
       <Toolbar>

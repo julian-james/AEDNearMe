@@ -18,7 +18,8 @@ import HomeIcon from "@material-ui/icons/Home";
 
 const useStyles = makeStyles((theme) => ({
   footer: {
-    backgroundColor: '#781C68',
+    backgroundColor: '#6500a3',
+    // 6500a3 blight-purple color
     position: "absolute",
     width: '100%',
     bottom:'0',
@@ -33,7 +34,8 @@ const useStyles = makeStyles((theme) => ({
       height: "100%",
       top: 0,
       left: "-100%",
-      backgroundColor: "#FFD39A",
+      backgroundColor: "#64f227",
+    //   64f227 blight green color 
       content: '" "',
       position: "absolute",
       transform: ` rotateZ(-60deg)`,
@@ -46,7 +48,8 @@ const useStyles = makeStyles((theme) => ({
   snsIcon: {
     width: "40px",
     height: "40px",
-    color: "#FFD39A",
+    color: "#64f227",
+    // 64f227 bright green color
     margin: "10px",
     [theme.breakpoints.down("xs")]: {
       width: "50px",
