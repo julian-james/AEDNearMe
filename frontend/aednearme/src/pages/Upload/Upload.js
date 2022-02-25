@@ -20,6 +20,7 @@ const Upload = () => {
   return (
     
     <Paper component="form" sx={{ p: '2px 4px', display: 'flex', alignItems: 'center' }}>
+        <h1>Submit new AED</h1>
         <UploadMap />
         <FormControl color="secondary">
             <FormControl margin="normal">

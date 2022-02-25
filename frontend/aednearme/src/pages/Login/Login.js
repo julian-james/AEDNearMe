@@ -15,6 +15,7 @@ const Login = () => {
     
   return (
     <Paper sx={{alignItems: 'center'}}>
+        <h1>Login</h1>
         <FormControl margin="normal">
             <FormControl>
                 <TextField 
