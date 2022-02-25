@@ -48,7 +48,7 @@ const Upload = () => {
                 </InputLabel>
                 <Select 
                     label="Access?"
-                    onChange={handleAccess}
+                    onClick={handleAccess}
                 >
                     <MenuItem>Public Access</MenuItem>
                     <MenuItem>Limited Access</MenuItem>

@@ -21,9 +21,6 @@ const MainMap = () => {
 
   const position = { lat: 51.496576, lng: -0.134824}
      
-  
- 
-
 const aedInfo = () => {
     <InfoWindow position={position}>
         <div><h2>AED here</h2></div>
@@ -41,8 +38,10 @@ const aedInfo = () => {
             options={options}>
         <Marker 
             position={{lat: 51.496576, lng: -0.134824}}
-            onClick={aedInfo}>   
+            onClick={aedInfo}
+            >   
         </Marker>
+        
         
         </GoogleMap>
 
