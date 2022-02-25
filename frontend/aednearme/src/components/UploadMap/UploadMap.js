@@ -48,5 +48,4 @@ const UploadMap = () => {
       </LoadScript>
     )
   }
-  
 export default UploadMap
