@@ -1,11 +1,10 @@
 import React from 'react'
-import CprVid from '../../components/CprVid/CprVid'
 
-const CPR = () => {
+const Choking = () => {
   return (
     <div>
-        <h1>CPR</h1>
-        <CprVid />
+        <h1>Choking</h1>
+        <p>Youtube video here</p>
         <p>Step 1: </p>
         <p>Step 2: </p>
         <p>Step 3: </p>
@@ -15,4 +14,4 @@ const CPR = () => {
   )
 }
 
-export default CPR
+export default Choking
