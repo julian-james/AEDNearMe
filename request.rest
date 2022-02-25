@@ -1,0 +1,11 @@
+POST http://localhost:8000/aed/
+Content-Type: application/json
+
+{
+    "username": "trevor",
+    "long": "51.468022",
+    "lat": "-0.093773",
+    "photo_url": "",
+    "access": "public",
+    "approved": "True"
+}
