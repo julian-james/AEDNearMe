@@ -3,7 +3,6 @@ import {
   AppBar,
   Toolbar,
   CssBaseline,
-  Typography,
   makeStyles,
   useTheme,
   useMediaQuery,
@@ -23,11 +22,11 @@ const useStyles = makeStyles((theme) => ({
   },
   link: {
     textDecoration: "none",
-    color: "white",
+    color: "#FFD39A",
     fontSize: "20px",
     marginLeft: theme.spacing(5),
     "&:hover": {
-      color: "yellow",
+      color: "#FFD39A",
       borderBottom: "1px solid white",
     },
   },
@@ -40,7 +39,10 @@ export const NavBar = () => {
   const isMobile = useMediaQuery(theme.breakpoints.down("md"));
 
   return (
-    <AppBar position="static">
+    <AppBar 
+      position="static"
+      style={{ background: '#9A0680' }}
+    >
       <CssBaseline />
       <Toolbar>
         {isMobile ? (

@@ -18,7 +18,7 @@ import HomeIcon from "@material-ui/icons/Home";
 
 const useStyles = makeStyles((theme) => ({
   footer: {
-    backgroundColor: theme.palette.primary.main,
+    backgroundColor: '#781C68',
     position: "absolute",
     width: '100%',
     bottom:'0',
@@ -33,7 +33,7 @@ const useStyles = makeStyles((theme) => ({
       height: "100%",
       top: 0,
       left: "-100%",
-      backgroundColor: "#000",
+      backgroundColor: "#FFD39A",
       content: '" "',
       position: "absolute",
       transform: ` rotateZ(-60deg)`,
@@ -46,10 +46,10 @@ const useStyles = makeStyles((theme) => ({
   snsIcon: {
     width: "40px",
     height: "40px",
-    color: "white",
+    color: "#FFD39A",
     margin: "10px",
     [theme.breakpoints.down("xs")]: {
-      width: "30px",
+      width: "50px",
       height: "30px",
     },
   },

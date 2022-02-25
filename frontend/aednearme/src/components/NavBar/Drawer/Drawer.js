@@ -13,13 +13,17 @@ import MenuIcon from "@material-ui/icons/Menu";
 
 
 const useStyles = makeStyles(()=>({
-    link:{
+  Drawer: {
+    color: '#EF6D6D',  
+  },
+  link:{
         textDecoration:"none",
         color: "blue",
         fontSize: "20px",
     },
     icon:{
-        color: "white"
+        color: "#FFD39A",
+        fontSize: "large",
     }
 }));
 
@@ -32,7 +36,9 @@ const classes = useStyles();
         open={openDrawer}
         onClose={() => setOpenDrawer(false)}
       >
-        <List>
+        <List
+        style={{ background: '#FFD39A' }}
+        >
          <ListItem onClick={() => setOpenDrawer(false)}>
             <ListItemText>
               <Link to="/">Home</Link>
@@ -65,10 +71,15 @@ const classes = useStyles();
           </ListItem>
 
         </List>
+
       </Drawer>
-      <IconButton onClick={() => setOpenDrawer(!openDrawer)}className={classes.icon}>        
-      <MenuIcon />
+
+      <IconButton 
+        sx={{ fontSize: 80 }}
+        onClick={() => setOpenDrawer(!openDrawer)}className={classes.icon}>        
+        <MenuIcon />
       </IconButton>
+
     </>
   );
 }
