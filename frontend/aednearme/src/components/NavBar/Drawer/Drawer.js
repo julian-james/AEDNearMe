@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import {
-    Divider,
+  Divider,
   Drawer,
   IconButton,
   List,
@@ -13,15 +13,12 @@ import MenuIcon from "@material-ui/icons/Menu";
 
 
 const useStyles = makeStyles(()=>({
-  Drawer: {
-    color: '#EF6D6D',  
-    width: 250,
-  },
-  link:{
-        textDecoration:"none",
-        color: "blue",
-        fontSize: "20px",
-    },
+
+  // link:{
+  //       textDecoration:"none",
+  //       color: "blue",
+  //       fontSize: "20px",
+  //   },
     icon:{
         color: "#64f227",
         // 64f227 bright green color
@@ -33,12 +30,14 @@ const classes = useStyles();
   const [openDrawer, setOpenDrawer] = useState(false);
   return (
     <>
-      <Drawer
+      <Drawer className={classes.drawer}
         open={openDrawer}
         onClose={() => setOpenDrawer(false)}
       >
         <List
-        style={{ background: '#64f227' }}
+        style={{ background: '#64f227'}}
+       
+        
         >
          <ListItem onClick={() => setOpenDrawer(false)}>
             <ListItemText>
@@ -51,7 +50,7 @@ const classes = useStyles();
 
           <ListItem onClick={() => setOpenDrawer(false)}>
             <ListItemText>
-              <Link to="/about">About</Link>
+              <Link to="/quiz">QUIZ</Link>
             </ListItemText>
           </ListItem>
 
@@ -59,7 +58,15 @@ const classes = useStyles();
 
           <ListItem onClick={() => setOpenDrawer(false)}>
             <ListItemText>
-              <Link to="/contact">Contact</Link>
+              <Link to="/upload">New AED?</Link>
+            </ListItemText>
+          </ListItem>
+
+          <Divider/>
+
+          <ListItem onClick={() => setOpenDrawer(false)}>
+            <ListItemText>
+              <Link to="/cpr">CPR</Link>
             </ListItemText>
           </ListItem>
 
