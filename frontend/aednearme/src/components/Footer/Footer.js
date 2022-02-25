@@ -73,17 +73,7 @@ export const Footer = ({ setValue, setSelectedIndex }) => {
        
         <Grid container direction="column">
           <Grid container justify="flex-end">
-            <Grid
-              item
-              component={"a"}
-              target="_blank"
-              rel="noreferrer noopener"
-              href="https://AEDnearMe.Netlify.App"
-            >
-              <HomeIcon className={classes.snsIcon} />
-            </Grid>
-           
-            
+          
             <Grid
               item
               component={"a"}

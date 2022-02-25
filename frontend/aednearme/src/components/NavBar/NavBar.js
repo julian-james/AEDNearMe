@@ -81,6 +81,7 @@ export const NavBar = () => {
           <Link to="/quiz" className={classes.link}>Quiz</Link>
           <Link to="/upload" className={classes.link}>New AED?</Link>
           <Link to="/faq" className={classes.link}>FAQ</Link>
+          <Link to="/login" className={classes.link}>Login</Link> 
           </div>
         )}
       </Toolbar>
