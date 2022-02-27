@@ -3,7 +3,7 @@ import ChokingVid from '../../components/ChokingVid/ChokingVid'
 
 const Choking = () => {
   return (
-    <div>
+    <div style={{ padding: "40px" }}>
         <h1>Choking</h1>
         <ChokingVid />
         <p>Step 1: </p>

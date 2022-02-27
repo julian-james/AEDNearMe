@@ -1,9 +1,9 @@
 import React from 'react'
 import CprVid from '../../components/CprVid/CprVid'
 
-const CPR = () => {
+const CPRhowto = () => {
   return (
-    <div>
+    <div style={{ padding: "40px" }}>
         <h1>CPR</h1>
         <CprVid />
         <p>Step 1: Check the person over and check for breathing for 10 seconds. If the person is unresponsive, call 999</p>
@@ -15,4 +15,4 @@ const CPR = () => {
   )
 }
 
-export default CPR
+export default CPRhowto

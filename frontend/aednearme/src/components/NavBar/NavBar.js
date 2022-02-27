@@ -9,7 +9,39 @@ import {
 } from "@material-ui/core";
 import { Link } from "react-router-dom";
 import DrawerComponent from "./Drawer/Drawer.js";
+import {MyMenu} from "../DropdownMenu/Menu.js";
 
+
+export const NavBar = () => {
+  const classes = useStyles();
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down("md"));
+
+  return (
+    <AppBar className={classes.appbar}
+    >
+      <CssBaseline />
+      <Toolbar>
+        {isMobile ? (
+          <DrawerComponent />
+        ) : (
+          <div className={classes.navlinks}>
+            <Link to="/" className={classes.link}>Home</Link>
+
+            <MyMenu title="AED" menuItems={aedArray} />
+            <MyMenu title="CPR" menuItems={cprArray} />
+            <MyMenu title="Choking" menuItems={chokingArray} />
+
+            <MyMenu title="Education Hub" menuItems={educationArray} />
+            <Link to="/register" className={classes.link}>LogIn / Register</Link>
+            
+        
+          </div>
+        )}
+      </Toolbar>
+    </AppBar>
+  );
+} 
 
 const useStyles = makeStyles((theme) => ({
   navlinks: {
@@ -36,10 +68,10 @@ const useStyles = makeStyles((theme) => ({
 
   appbar: {
 
-    
+
     position: "static",
     background: '#5702a1',
-      // 5702a1 dark-purple color
+    // 5702a1 dark-purple color
     // "&:before": {
     //   width: "200%",
     //   height: "100%",
@@ -56,35 +88,49 @@ const useStyles = makeStyles((theme) => ({
     // },
   },
 
-
-
 }));
 
+const aedArray = [
+  {
+    title: "Locations / Register new",
+    path: "/AEDmap"
+  },
+  {
+    title: "How to use",
+    path: '/AEDhowto'
+  }
+]
 
-export const NavBar = () => {
-  const classes = useStyles();
-  const theme = useTheme();
-  const isMobile = useMediaQuery(theme.breakpoints.down("md"));
+const cprArray = [
+  {
+    title: "How to give",
+    path: "/cprhowto"
+  }
+]
 
-  return (
-    <AppBar className={classes.appbar}
-    
-      
-    >
-      <CssBaseline />
-      <Toolbar>
-        {isMobile ? (
-          <DrawerComponent />
-        ) : (
-          <div className={classes.navlinks}>
-          <Link to="/" className={classes.link}>Home</Link>
-          <Link to="/quiz" className={classes.link}>Quiz</Link>
-          <Link to="/upload" className={classes.link}>New AED?</Link>
-          <Link to="/faq" className={classes.link}>FAQ</Link>
-          <Link to="/login" className={classes.link}>Login</Link> 
-          </div>
-        )}
-      </Toolbar>
-    </AppBar>
-  );
-}
+const chokingArray = [
+  {
+    title: "How to help",
+    path: "/choking"
+  }
+]
+
+const educationArray = [
+  {
+    title: "QUIZ",
+    path: "/quiz"
+  },
+  {
+    title: "AED: how to use",
+    path: "/aedhowto"
+  },
+  {
+    title: "CPR: how to give",
+    path: "/cprhowto"
+  },
+  {
+    title: "Choking: how to help",
+    path: "/choking"
+  }
+]
+
