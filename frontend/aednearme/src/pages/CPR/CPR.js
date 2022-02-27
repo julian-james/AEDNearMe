@@ -6,7 +6,7 @@ import DefibVid from '../../components/DefibVid/DefibVid'
 const CPR = () => {
   return (
     <div>
-        <h1>CPR</h1>
+        <h1>How to perform hands only CPR</h1>
         <CprVid />
         <Typography />Step 1: If you suspect someone is having a cardiac arrest, check the person over, tilt the head back and check for breathing for 10 seconds. If the person is unresponsive, ask someone to call 999/112 and tell them to bring an AED
         <Typography />Step 2: Start hands only CPR, lock your hands together and place them by the person's chest.
