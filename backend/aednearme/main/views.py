@@ -9,7 +9,7 @@ from .models import Defib
 
 
 @api_view(['GET'])
-@login_required
+# @login_required
 def get_all_defibs(request):
     # return HttpResponse('Hello World!')
     try:
