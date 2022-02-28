@@ -15,10 +15,12 @@ import useMediaQuery from "@material-ui/core/useMediaQuery";
 //sns icon
 import GitHubIcon from "@material-ui/icons/GitHub";
 import HomeIcon from "@material-ui/icons/Home";
+import MarkEmailUnreadIcon from '@mui/icons-material/MarkEmailUnread';
+import CopyrightIcon from '@mui/icons-material/Copyright';
 
 const useStyles = makeStyles((theme) => ({
   footer: {
-    backgroundColor: '#6500a3',
+    backgroundColor: '#000',
     // 6500a3 blight-purple color
     position: "fixed",
     width: '100%',
@@ -29,26 +31,31 @@ const useStyles = makeStyles((theme) => ({
     //location of the image: behind / infront
     zIndex: 1302,
     padding: "5px 0",
-    "&:before": {
-      width: "200%",
-      height: "100%",
-      top: 0,
-      left: "-100%",
-      backgroundColor: "#64f227",
-      //   64f227 blight green color 
-      content: '" "',
-      position: "absolute",
-      transform: ` rotateZ(-60deg)`,
-      [theme.breakpoints.down("sm")]: {
-        height: "180%",
-      },
-    },
+    // "&:before": {
+    //   width: "200%",
+    //   height: "100%",
+    //   top: 0,
+    //   left: "-100%",
+    //   backgroundColor: "#64f227",
+    //   //   64f227 blight green color 
+    //   content: '" "',
+    //   position: "absolute",
+    //   transform: ` rotateZ(-60deg)`,
+    //   [theme.breakpoints.down("sm")]: {
+    //     height: "180%",
+    //   },
+    // },
+  },
+
+  item: {
+    display: "flex",
+    alignItems: "center",
   },
 
   snsIcon: {
     width: "40px",
     height: "40px",
-    color: "#64f227",
+    color: "#fff",
     // 64f227 bright green color
     margin: "10px",
     [theme.breakpoints.down("xs")]: {
@@ -72,26 +79,30 @@ export const Footer = ({ setValue, setSelectedIndex }) => {
 
 
         <Grid container direction="column">
-          <Grid container justify="flex-end">
+          <Grid container justify="space-between">
             <Grid
               item
-              component={"a"}
-              target="_blank"
-              rel="noreferrer noopener"
-              href="https://mui-aed.Netlify.App"
+              // component={"a"}
+              // target="_blank"
+              // rel="noreferrer noopener"
+              // href="https://mui-aed.Netlify.App"
+              className={classes.item}
             >
-              <HomeIcon className={classes.snsIcon} />
+              <MarkEmailUnreadIcon fontSize="large" className={classes.snsIcon} />
+              <p>Contact <br /> info@gmail.com </p>
             </Grid>
 
 
             <Grid
               item
-              component={"a"}
-              target="_blank"
-              rel="noreferrer noopener"
-              href="https://github.com/wotaque/mui-aed"
+              // component={"a"}
+              // target="_blank"
+              // rel="noreferrer noopener"
+              // href="https://github.com/wotaque/mui-aed"
+              className={classes.item}
             >
-              <GitHubIcon className={classes.snsIcon} />
+              <CopyrightIcon fontSize="large"className={classes.snsIcon} />
+              <p>© 2022 <br /> by Snake in the Flask </p>
             </Grid>
           </Grid>
         </Grid>
