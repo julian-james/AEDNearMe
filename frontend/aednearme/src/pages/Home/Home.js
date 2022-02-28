@@ -47,7 +47,7 @@ const Home = () => {
 
                   <Button variant="contained" 
                   onClick={goToAEDhowTo}
-                    component={Link}
+                    // component={Link}
                     size="large"
                     color="primary"
                     variant="contained"
@@ -56,7 +56,7 @@ const Home = () => {
                     </Button>
 
                     <Button variant="contained" onClick={goToUpload}
-                      component={Link}
+                      // component={Link}
                       size="large"
                       color="primary"
                       variant="contained"

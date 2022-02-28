@@ -53,6 +53,7 @@ export const NavBar = () => {
            
            
           </div>
+          </div>
         )}
       </Toolbar>
     </AppBar>
