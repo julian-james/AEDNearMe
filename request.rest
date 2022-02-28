@@ -1,5 +1,6 @@
-POST http://localhost:8000/aed/
+POST http://localhost:8000/aed/upload/
 Content-Type: application/json
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjQ1ODExNTExLCJpYXQiOjE2NDU4MTEyMTEsImp0aSI6ImMzY2ZjZTAxMzk3NTQ0NGJiYTMzMGMxOGZkZGVhNWVkIiwidXNlcl9pZCI6MSwidXNlcm5hbWUiOiJ0cmV2b3IifQ.efhNEWKRtesQn9RZ_xg319mcV0gdHm_9tSs3wJhMJIw
 
 {
     "username": "trevor",
@@ -9,3 +10,50 @@ Content-Type: application/json
     "access": "public",
     "approved": "True"
 }
+
+###
+
+GET http://localhost:8000/aed/
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjQ1OTc5NDI4LCJpYXQiOjE2NDU5NzkxMjgsImp0aSI6IjY2YTMxZGYyMDFiYzRmN2ZiOGQwYWQ2ZWE2NmVmMmIxIiwidXNlcl9pZCI6MX0.C89Z_xppHLvUB0CR0fubFRWOamOyKJQ87qvf318CUqM
+
+
+###
+
+POST http://localhost:8000/users/register
+Content-Type: application/json
+
+
+
+###
+
+POST http://localhost:8000/users/login
+Content-Type: application/json
+
+{
+    "username": "trevor",
+    "password": "gotMints365"
+}
+
+
+###
+
+POST http://localhost:8000/users/login/refresh
+Content-Type: application/json
+
+{
+    "refresh": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTY0NjA2NTUyOCwiaWF0IjoxNjQ1OTc5MTI4LCJqdGkiOiJlYWMyYWVhYjE5OWE0YjY2OTQyN2FlYTkyNTA5ZDIzMiIsInVzZXJfaWQiOjF9.qJIGF59TpF11hp-10RcawFKkFzQ6idukaDNBuBPJIGI"
+}
+
+
+
+###
+
+POST http://localhost:8000/users/logout
+Content-Type: application/json
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjQ1OTc5NDI4LCJpYXQiOjE2NDU5NzkxMjgsImp0aSI6IjY2YTMxZGYyMDFiYzRmN2ZiOGQwYWQ2ZWE2NmVmMmIxIiwidXNlcl9pZCI6MX0.C89Z_xppHLvUB0CR0fubFRWOamOyKJQ87qvf318CUqM
+
+{
+    "username": "trevor",
+    "refresh_token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTY0NjA2NTUyOCwiaWF0IjoxNjQ1OTc5MTI4LCJqdGkiOiJlYWMyYWVhYjE5OWE0YjY2OTQyN2FlYTkyNTA5ZDIzMiIsInVzZXJfaWQiOjF9.qJIGF59TpF11hp-10RcawFKkFzQ6idukaDNBuBPJIGI"
+}
+

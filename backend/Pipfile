@@ -8,6 +8,7 @@ django = "*"
 django-cors-headers = "*"
 djangorestframework = "*"
 djangorestframework-simplejwt = "*"
+tzdata = "*"
 
 [dev-packages]
 

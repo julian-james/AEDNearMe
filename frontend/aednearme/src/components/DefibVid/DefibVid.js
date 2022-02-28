@@ -1,13 +1,13 @@
 import React from 'react'
 import ReactPlayer from "react-player";
 
-const CprVid = () => {
+const DefibVid = () => {
   return (
     <div>
         <h2>CPR Tutorial</h2>
-        <ReactPlayer width="75%" url="https://youtu.be/8y9zfEuzK7Q?t=34" />
+        <ReactPlayer url="https://youtu.be/UFvL7wTFzl0?t=46" />
     </div>
   )
 }
 
-export default CprVid
+export default DefibVid
