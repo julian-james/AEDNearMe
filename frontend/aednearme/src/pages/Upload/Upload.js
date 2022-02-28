@@ -18,9 +18,9 @@ const Upload = () => {
   const handleAccess = (e) => setAccess(e.target.value);
 
   return (
-    
+    <div>
+        <div><h1>Submit new AED</h1></div>
     <Paper component="form" sx={{ p: '2px 4px', display: 'flex', alignItems: 'center' }}>
-        <h1>Submit new AED</h1>
         <UploadMap />
         <FormControl color="secondary">
             <FormControl margin="normal">
@@ -63,6 +63,7 @@ const Upload = () => {
             
         </FormControl>
     </Paper>
+    </div>
   )
 }
 
