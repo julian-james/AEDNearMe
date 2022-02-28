@@ -17,6 +17,12 @@ export const NavBar = () => {
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("md"));
 
+  const handleLogout = () => {
+    sessionStorage.clear()
+    alert('You have been logged out')
+    window.location.reload()
+  }
+
   return (
     <AppBar className={classes.appbar}
     >
@@ -25,24 +31,27 @@ export const NavBar = () => {
         {isMobile ? (
           <DrawerComponent />
         ) : (
+
           <div className={classes.root}>
-            <div className="">
+           <div className="">
               <Link to="/" className={classes.logo}>AED <br /> nearMe </Link>
             </div>
+          <div className={classes.navlinks}>
+            <Link to="/" className={classes.link}>Home</Link>
 
-            <div className={classes.navlinks}>
-              <Link to="/" className={classes.link}>Home</Link>
-              <MyMenu title="AED" menuItems={aedArray} />
-              <MyMenu title="CPR" menuItems={cprArray} />
-              <MyMenu title="Choking" menuItems={chokingArray} />
+            <MyMenu title="AED" menuItems={aedArray} />
+            <MyMenu title="CPR" menuItems={cprArray} />
+            <MyMenu title="Choking" menuItems={chokingArray} />
+            
 
-              <MyMenu title="Education Hub" menuItems={educationArray} />
-              <Link to="/login" className={classes.link}>Login</Link>
-            </div>
-
-            {/* <Link to="/quiz" className={classes.link}>Quiz</Link>
-            <Link to="/upload" className={classes.link}>New AED?</Link>
-            <Link to="/faq" className={classes.link}>FAQ</Link> */}
+            <MyMenu title="Education Hub" menuItems={educationArray} />
+            {
+            sessionStorage.getItem('accessToken') ?
+            <Link to="/" onClick={handleLogout} className={classes.link}>Logout</Link> :
+            <Link to="/login" className={classes.link}>Login</Link>
+            }
+           
+           
           </div>
         )}
       </Toolbar>

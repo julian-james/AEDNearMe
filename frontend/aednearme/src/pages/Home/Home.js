@@ -8,6 +8,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import MainMap from '../../components/MainMap/MainMap';
 import './Home.css'; 
 
+
 const Home = () => {
   const navigate = useNavigate();
 
@@ -28,6 +29,7 @@ const Home = () => {
             item
             lg={12}
             className="px-0 mx-auto d-flex align-items-center">
+
 
             <div className="text-center">
               
@@ -79,3 +81,4 @@ const Home = () => {
 };
 
 export default Home;
+
