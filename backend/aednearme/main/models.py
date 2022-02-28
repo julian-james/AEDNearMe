@@ -8,11 +8,11 @@ class Defib(models.Model):
         ('unknown', 'unknown')
     ]
 
-    address = models.CharField(max_lengh=255)
-    post_code = models.CharField(max_length=7)
+    address = models.CharField(max_length=255,null=True, blank=True)
+    post_code = models.CharField(max_length=7,null=True, blank=True)
     long = models.CharField(max_length=50)
     lat = models.CharField(max_length=50)
-    what3words_link = models.URLField()
+    what3words_link = models.URLField(null=True, blank=True)
     photo_url = models.URLField(null=True, blank=True)
     time_taken = models.DateTimeField(auto_now_add=True)
     access = models.CharField(max_length=50, choices=ACCESS_CHOICES, default='unknown')
