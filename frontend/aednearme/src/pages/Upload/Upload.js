@@ -11,14 +11,28 @@ const Upload = () => {
   const [ uploadImage64, setUploadImage64] = useState("");
   const [ comments, setComments ] = useState("");
 
-  const handleSubmit = () => {
+  const handleSubmit = async () => {
       const data = {
+          "username": "trevor",
+          "address": "11-19 Artillery Row",
+          "post_code": "SW7059G",
+          "what3words_link": "http://what3words.com/fruity.song.plant",
           "lat": latitude,
           "long": longitude,
           "access": access,
+          "approved": false,
+          "photo_url": uploadImage64,
+          "comments": comments
+      }
+      const options = {
+          headers: new Headers({
+              "Content-Type": "application/json",
+            //   Authorization: "Bearer "+token 
+            }),
           
       }
-      axios.post('https://localhost:8000/aed/upload/', data, options)
+      const result = await axios.post('http://localhost:8000/aed/upload/', data, options)
+      console.log(result)
   }  
 
   const handleLat = (e) => setLatitude(e.target.value);
