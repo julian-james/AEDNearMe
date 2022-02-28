@@ -10,36 +10,47 @@ import {
 } from "@material-ui/core";
 import { Link } from "react-router-dom";
 import MenuIcon from "@material-ui/icons/Menu";
-import Menu from '@mui/material/Menu';
-import { MenuItem } from "@mui/material";
 import MobileMenu from "../../DropdownMenu/MobileMenu";
 
 const useStyles = makeStyles(() => ({
-  homeBox: {
+  logoBox: {
     display: "flex",
     justifyContent: "end",
     alignItems: "center",
   },
-  // link:{
-  //       textDecoration:"none",
-  //       color: "blue",
-  //       fontSize: "20px",
-  //   },
+  link: {
+    textDecoration: "none",
+    color: "#fff",
+    // fontSize: "20px",
+    // fontWeight: "bold",
+  },
   icon: {
-    color: "#64f227",
+    color: "#fff",
     // 64f227 bright green color
   },
-  home: {
-    color: "#64f227",
-    // 64f227 bright green color
+  logo: {
+    flexGrow: "1",
+    cursor: "pointer",
     textDecoration: "none",
+    color: "#fff",
     fontSize: "20px",
-  }
+    fontWeight: "bolder",
+    lineHeight: "0px"
+  },
+
 }));
+
 
 function DrawerComponent() {
   const classes = useStyles();
   const [openDrawer, setOpenDrawer] = useState(false);
+
+  const handleLogout = () => {
+    sessionStorage.clear()
+    alert('You have been logged out')
+    window.location.reload()
+  }
+
   return (
     <>
       <Drawer className={classes.drawer}
@@ -47,8 +58,15 @@ function DrawerComponent() {
         onClose={() => setOpenDrawer(false)}
       >
         <List
-          style={{ background: '#64f227' }}
+          style={{ background: '#ba181b' }}
         >
+          <ListItem onClick={() => setOpenDrawer(false)}>
+            <ListItemText>
+              <Link to="/" className={classes.link}>Home</Link>
+            </ListItemText>
+          </ListItem>
+
+  <Divider />
 
           <MobileMenu 
             title="AED" 
@@ -65,31 +83,30 @@ function DrawerComponent() {
           <Divider />
 
           <MobileMenu 
-            title="Choking" 
-            menuItems={chokingArray} 
-            handleClose={() => setOpenDrawer(false)} />
-
-          <Divider />
-
-          <MobileMenu 
             title="Education Hub" 
             menuItems={educationArray} 
             handleClose={() => setOpenDrawer(false)} />
 
           <Divider />
 
+          
           <ListItem onClick={() => setOpenDrawer(false)}>
             <ListItemText>
-              <Link to="/login">Login </Link>
+
+              {
+                sessionStorage.getItem('accessToken') ?
+                <Link to="/" onClick={handleLogout} className={classes.link}>Logout</Link> :
+                <Link to="/login" className={classes.link}>Login</Link>
+              }
+
             </ListItemText>
           </ListItem>
 
-          
         </List>
 
       </Drawer>
 
-      <div className={classes.homeBox}>
+      <div className={classes.logoBox}>
 
         <IconButton
           sx={{ fontSize: 80 }}
@@ -98,7 +115,7 @@ function DrawerComponent() {
         </IconButton>
 
         <span >
-          <Link className={classes.home} to="/">Home</Link>
+          <Link className={classes.logo} to="/">AED <br /> nearME </Link>
         </span>
       </div>
 
@@ -108,27 +125,23 @@ function DrawerComponent() {
 export default DrawerComponent;
 
 
+
+
 const aedArray = [
   {
-    title: "Register new",
-    path: "/upload"
+    title: "How to use",
+    path: '/aedhowto'
   },
   {
-    title: "How to use",
-    path: '/AEDhowto',
+    title: "Register new AED",
+    path: '/upload'
   }
 ]
 
 const cprArray = [
   {
     title: "How to give",
-    path: "/CPRhowto"
-  }
-]
-const chokingArray = [
-  {
-    title: "How to help",
-    path: "/choking"
+    path: "/cprhowto"
   }
 ]
 
@@ -138,16 +151,18 @@ const educationArray = [
     path: "/quiz"
   },
   {
-    title: "AED: how to use",
+    title: "AED: How to use",
     path: "/aedhowto"
   },
   {
-    title: "CPR: how to give",
+    title: "CPR: How to give",
     path: "/cprhowto"
   },
   {
-    title: "Choking: how to help",
-    path: "/choking"
+    title: "Choking: How to help",
+    path: "/chokinghowto"
   }
+  
+
 ]
 
