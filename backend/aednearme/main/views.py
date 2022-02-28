@@ -31,7 +31,7 @@ def create_defib(request):
         post_code = request.data['post_code'],
         long = request.data['long'],
         lat = request.data['lat'],
-        what3words_link = request.data['what3words_link']
+        what3words_link = request.data['what3words_link'],
         photo_url = request.data['photo_url'],
         access = request.data['access'],
         approved = request.data['approved'],
