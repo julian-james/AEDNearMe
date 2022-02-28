@@ -4,8 +4,6 @@ import mapStyles from './mapStyles';
 import AddIcon from '@mui/icons-material/Add';
 import axios from 'axios'
 
-
-
 const MainMap = () => {
   const baseUrl = "http://127.0.0.1:8000"
 
@@ -26,15 +24,34 @@ const MainMap = () => {
       width: '60vw',
       height: '60vh',
   };
+
   // Hard coded center at Futureproof
-  const center = {
-      lat: 51.4967001,
-      lng: -0.1356203
-  }
+  // const center = {
+  //     lat: 51.4967001,
+  //     lng: -0.1356203
+  // };
+
   const options = {
     styles: mapStyles,
     zoomControl: true
-  }
+  };
+
+
+  // Gets current position of user
+  const [currentLat, setCurrentLat] = useState();
+  const [currentLong, setCurrentLong] = useState();
+
+if('geolocation' in navigator){
+  console.log('geolocation available');
+  navigator.geolocation.getCurrentPosition(position => {
+    const currentLat = position.coords.latitude;
+    setCurrentLat(currentLat)
+    const currentLong = position.coords.longitude;
+    setCurrentLong(currentLong)
+  })
+} else {
+  console.log('geolocation not available')
+}
 
 const position = aedData.map((aed, index) => {
     return {lat: parseFloat(aed.lat), long: parseFloat(aed.long)}
@@ -56,7 +73,7 @@ const [selectedAED, setSelectedAED] = useState(null);
         <GoogleMap 
             mapContainerStyle={containerStyle} 
             zoom={17} 
-            center={center} 
+            center={{lat: currentLat, lng: currentLong}} 
             options={options}>
           {position.map((aed) => {
             return <Marker 
