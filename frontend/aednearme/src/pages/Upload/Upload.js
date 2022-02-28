@@ -13,25 +13,27 @@ const Upload = () => {
       // email confirmation
   }  
 
-  const handleLat = () => setLatitude(e.target.value)
-  const handleLng = () => setLongitude(e.target.value)
-  const handleAccess = () => setAccess(e.target.value)
+  const handleLat = (e) => setLatitude(e.target.value);
+  const handleLng = (e) => setLongitude(e.target.value);
+  const handleAccess = (e) => setAccess(e.target.value);
 
   return (
-    
+    <div>
+        <div><h1>Submit new AED</h1></div>
     <Paper component="form" sx={{ p: '2px 4px', display: 'flex', alignItems: 'center' }}>
-        <h1>Submit new AED</h1>
         <UploadMap />
         <FormControl color="secondary">
             <FormControl margin="normal">
-               <input type="file" />
+               <Input type="file" />
                <Button variant="raised">Upload img</Button> 
             
-            </FormControl >
+            </FormControl>
+
             <FormControl margin="normal">
                 <TextField
                     label="Latitude"
                     id="latitude"
+                    type="number"
                     onChange={handleLat}
                 />
             </FormControl>
@@ -39,6 +41,7 @@ const Upload = () => {
                 <TextField
                         label="Longitude"
                         id="longitude"
+                        type="number"
                         onChange={handleLng}
                     />
             </FormControl>
@@ -47,11 +50,12 @@ const Upload = () => {
                     Access?
                 </InputLabel>
                 <Select 
+                    id="access"
                     label="Access?"
-                    onClick={handleAccess}
-                >
-                    <MenuItem>Public Access</MenuItem>
-                    <MenuItem>Limited Access</MenuItem>
+                    value={access}
+                    onChange={handleAccess}>
+                    <MenuItem value="Public Access">Public Access</MenuItem>
+                    <MenuItem value="Limited Access">Limited Access</MenuItem>
                 </Select>
             </FormControl>
             <FormControl margin="normal">
@@ -60,6 +64,7 @@ const Upload = () => {
             
         </FormControl>
     </Paper>
+    </div>
   )
 }
 

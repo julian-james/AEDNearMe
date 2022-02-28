@@ -20,11 +20,11 @@ const useStyles = makeStyles((theme) => ({
   footer: {
     backgroundColor: '#6500a3',
     // 6500a3 blight-purple color
-    position: "absolute",
+    position: "fixed",
     width: '100%',
-    bottom:'0',
-	left:'0',
-    margin:'0 auto',
+    bottom: '0',
+    left: '0',
+    margin: '0 auto',
     overflow: "hidden",
     //location of the image: behind / infront
     zIndex: 1302,
@@ -35,7 +35,7 @@ const useStyles = makeStyles((theme) => ({
       top: 0,
       left: "-100%",
       backgroundColor: "#64f227",
-    //   64f227 blight green color 
+      //   64f227 blight green color 
       content: '" "',
       position: "absolute",
       transform: ` rotateZ(-60deg)`,
@@ -44,7 +44,7 @@ const useStyles = makeStyles((theme) => ({
       },
     },
   },
-  
+
   snsIcon: {
     width: "40px",
     height: "40px",
@@ -56,8 +56,8 @@ const useStyles = makeStyles((theme) => ({
       height: "30px",
     },
   },
-  
-  
+
+
 }));
 
 
@@ -69,17 +69,27 @@ export const Footer = ({ setValue, setSelectedIndex }) => {
   return (
     <footer className={classes.footer}>
       <Container maxWidth="lg">
-        
-       
+
+
         <Grid container direction="column">
           <Grid container justify="flex-end">
-          
             <Grid
               item
               component={"a"}
               target="_blank"
               rel="noreferrer noopener"
-              href="https://github.com/brandolee15/AEDNearMe"
+              href="https://mui-aed.Netlify.App"
+            >
+              <HomeIcon className={classes.snsIcon} />
+            </Grid>
+
+
+            <Grid
+              item
+              component={"a"}
+              target="_blank"
+              rel="noreferrer noopener"
+              href="https://github.com/wotaque/mui-aed"
             >
               <GitHubIcon className={classes.snsIcon} />
             </Grid>

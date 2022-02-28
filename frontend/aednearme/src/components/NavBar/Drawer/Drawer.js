@@ -6,27 +6,39 @@ import {
   List,
   ListItem,
   ListItemText,
- makeStyles
+  makeStyles
 } from "@material-ui/core";
 import { Link } from "react-router-dom";
 import MenuIcon from "@material-ui/icons/Menu";
+import Menu from '@mui/material/Menu';
+import { MenuItem } from "@mui/material";
+import MobileMenu from "../../DropdownMenu/MobileMenu";
 
-
-const useStyles = makeStyles(()=>({
-
+const useStyles = makeStyles(() => ({
+  homeBox: {
+    display: "flex",
+    justifyContent: "end",
+    alignItems: "center",
+  },
   // link:{
   //       textDecoration:"none",
   //       color: "blue",
   //       fontSize: "20px",
   //   },
-    icon:{
-        color: "#64f227",
-        // 64f227 bright green color
-    }
+  icon: {
+    color: "#64f227",
+    // 64f227 bright green color
+  },
+  home: {
+    color: "#64f227",
+    // 64f227 bright green color
+    textDecoration: "none",
+    fontSize: "20px",
+  }
 }));
 
 function DrawerComponent() {
-const classes = useStyles();
+  const classes = useStyles();
   const [openDrawer, setOpenDrawer] = useState(false);
   return (
     <>
@@ -35,60 +47,107 @@ const classes = useStyles();
         onClose={() => setOpenDrawer(false)}
       >
         <List
-        style={{ background: '#64f227'}}
-       
-        
+          style={{ background: '#64f227' }}
         >
-         <ListItem onClick={() => setOpenDrawer(false)}>
-            <ListItemText>
-              <Link to="/">Home</Link>
-            </ListItemText>
-          </ListItem>
 
-          <Divider/>
+          <MobileMenu 
+            title="AED" 
+            menuItems={aedArray} 
+            handleClose={() => setOpenDrawer(false)} />
 
+          <Divider />
 
-          <ListItem onClick={() => setOpenDrawer(false)}>
-            <ListItemText>
-              <Link to="/quiz">QUIZ</Link>
-            </ListItemText>
-          </ListItem>
+          <MobileMenu 
+            title="CPR" 
+            menuItems={cprArray} 
+            handleClose={() => setOpenDrawer(false)} />
 
-          <Divider/>
+          <Divider />
 
-          <ListItem onClick={() => setOpenDrawer(false)}>
-            <ListItemText>
-              <Link to="/upload">New AED?</Link>
-            </ListItemText>
-          </ListItem>
+          <MobileMenu 
+            title="Choking" 
+            menuItems={chokingArray} 
+            handleClose={() => setOpenDrawer(false)} />
 
-          <Divider/>
+          <Divider />
 
-          <ListItem onClick={() => setOpenDrawer(false)}>
-            <ListItemText>
-              <Link to="/cpr">CPR</Link>
-            </ListItemText>
-          </ListItem>
+          <MobileMenu 
+            title="Education Hub" 
+            menuItems={educationArray} 
+            handleClose={() => setOpenDrawer(false)} />
 
-          <Divider/>
+          <Divider />
 
           <ListItem onClick={() => setOpenDrawer(false)}>
             <ListItemText>
-              <Link to="/faq">FAQ</Link>
+              <Link to="/login">Login </Link>
             </ListItemText>
           </ListItem>
 
+          
         </List>
 
       </Drawer>
 
-      <IconButton 
-        sx={{ fontSize: 80 }}
-        onClick={() => setOpenDrawer(!openDrawer)}className={classes.icon}>        
-        <MenuIcon />
-      </IconButton>
+      <div className={classes.homeBox}>
+
+        <IconButton
+          sx={{ fontSize: 80 }}
+          onClick={() => setOpenDrawer(!openDrawer)} className={classes.icon}>
+          <MenuIcon />
+        </IconButton>
+
+        <span >
+          <Link className={classes.home} to="/">Home</Link>
+        </span>
+      </div>
 
     </>
   );
 }
 export default DrawerComponent;
+
+
+const aedArray = [
+  {
+    title: "Register new",
+    path: "/upload"
+  },
+  {
+    title: "How to use",
+    path: '/AEDhowto',
+  }
+]
+
+const cprArray = [
+  {
+    title: "How to give",
+    path: "/CPRhowto"
+  }
+]
+const chokingArray = [
+  {
+    title: "How to help",
+    path: "/choking"
+  }
+]
+
+const educationArray = [
+  {
+    title: "QUIZ",
+    path: "/quiz"
+  },
+  {
+    title: "AED: how to use",
+    path: "/aedhowto"
+  },
+  {
+    title: "CPR: how to give",
+    path: "/cprhowto"
+  },
+  {
+    title: "Choking: how to help",
+    path: "/choking"
+  }
+]
+
