@@ -13,7 +13,7 @@ class Defib(models.Model):
     long = models.CharField(max_length=50)
     lat = models.CharField(max_length=50)
     what3words_link = models.URLField(null=True)
-    photo_url = models.URLField(null=True, blank=True)
+    photo_url = models.TextField(null=True, blank=True)
     time_taken = models.DateTimeField(auto_now_add=True)
     access = models.CharField(max_length=50, choices=ACCESS_CHOICES, default='unknown')
     approved = models.BooleanField(default=False)
