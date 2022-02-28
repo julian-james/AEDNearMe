@@ -9,7 +9,7 @@ import {
 } from "@material-ui/core";
 import { Link } from "react-router-dom";
 import DrawerComponent from "./Drawer/Drawer.js";
-import {MyMenu} from "../DropdownMenu/Menu.js";
+import { MyMenu } from "../DropdownMenu/Menu.js";
 
 
 export const NavBar = () => {
@@ -25,38 +25,64 @@ export const NavBar = () => {
         {isMobile ? (
           <DrawerComponent />
         ) : (
-          <div className={classes.navlinks}>
-            <Link to="/" className={classes.link}>Home</Link>
+          <div className={classes.root}>
+            <div className="">
+              <Link to="/" className={classes.logo}>AED <br /> nearMe </Link>
+            </div>
 
-            <MyMenu title="AED" menuItems={aedArray} />
-            <MyMenu title="CPR" menuItems={cprArray} />
-            <MyMenu title="Choking" menuItems={chokingArray} />
+            <div className={classes.navlinks}>
+              <Link to="/" className={classes.link}>Home</Link>
+              <MyMenu title="AED" menuItems={aedArray} />
+              <MyMenu title="CPR" menuItems={cprArray} />
+              <MyMenu title="Choking" menuItems={chokingArray} />
 
-            <MyMenu title="Education Hub" menuItems={educationArray} />
-            <Link to="/login" className={classes.link}>Login</Link>
-            
-        
+              <MyMenu title="Education Hub" menuItems={educationArray} />
+              <Link to="/login" className={classes.link}>Login</Link>
+            </div>
+
+            {/* <Link to="/quiz" className={classes.link}>Quiz</Link>
+            <Link to="/upload" className={classes.link}>New AED?</Link>
+            <Link to="/faq" className={classes.link}>FAQ</Link> */}
           </div>
         )}
       </Toolbar>
     </AppBar>
   );
-} 
+}
+
+
+
 
 const useStyles = makeStyles((theme) => ({
-  navlinks: {
+  root: {
     marginLeft: theme.spacing(1),
     display: "flex",
+    alignItems: "center",
+    justifyContent: "space-between",
+    width: "100%",
+  },
+  navlinks: {
+    margin: theme.spacing(2),
+    display: "flex",
+    padding: "20px 0",
+    borderBottom: "1px solid #fff"
   },
 
   logo: {
     flexGrow: "1",
     cursor: "pointer",
+    textDecoration: "none",
+    color: "#fff",
+    fontSize: "25px",
+    fontWeight: "bolder",
+    lineHeight: "0px"
   },
 
   link: {
     textDecoration: "none",
-    color: "#64f227",
+    // color: "#64f227",
+    color: "#fff",
+    fontWeight: "bold",
     // 64f227 blight green color
     fontSize: "20px",
     marginLeft: theme.spacing(5),
@@ -67,37 +93,20 @@ const useStyles = makeStyles((theme) => ({
   },
 
   appbar: {
-
-
     position: "static",
-    background: '#5702a1',
-    // 5702a1 dark-purple color
-    // "&:before": {
-    //   width: "200%",
-    //   height: "100%",
-    // //  top 0
-    //   right: "100%",
-    //   backgroundColor: "#64f227",
-    // //   64f227 blight green color 
-    //   content: '" "',
-    //   position: "absolute",
-    //   transform: ` rotateZ(-60deg)`,
-    //   [theme.breakpoints.down("sm")]: {
-    //     height: "180%",
-    //   },
-    // },
+    background: '#ba181b',
   },
 
 }));
 
 const aedArray = [
   {
-    title: "Register new",
-    path: "/upload"
+    title: "How to use",
+    path: '/aedhowto'
   },
   {
-    title: "How to use",
-    path: '/AEDhowto'
+    title: "Register new AED",
+    path: '/upload'
   }
 ]
 
@@ -107,11 +116,10 @@ const cprArray = [
     path: "/cprhowto"
   }
 ]
-
 const chokingArray = [
   {
     title: "How to help",
-    path: "/choking"
+    path: "/chokinghowto"
   }
 ]
 
@@ -121,16 +129,16 @@ const educationArray = [
     path: "/quiz"
   },
   {
-    title: "AED: how to use",
+    title: "AED: How to use",
     path: "/aedhowto"
   },
   {
-    title: "CPR: how to give",
+    title: "CPR: How to give",
     path: "/cprhowto"
   },
   {
-    title: "Choking: how to help",
-    path: "/choking"
+    title: "Choking: How to help",
+    path: "/chokinghowto"
   }
 ]
 

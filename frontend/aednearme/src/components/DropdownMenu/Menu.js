@@ -1,12 +1,10 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-
+import * as React from 'react';
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
+import { Link } from 'react-router-dom';
 
 
 export const MyMenu = (props) => {
-
     const [anchorEl, setAnchorEl] = React.useState(null);
     const open = Boolean(anchorEl);
     const handleClick = (event) => {
@@ -25,10 +23,11 @@ export const MyMenu = (props) => {
                 aria-expanded={open ? 'true' : undefined}
                 onClick={handleClick}
                 style={{
-                    color: "#64f227",
+                    color: "#fff",
                     fontSize: '20px',
                     cursor: 'pointer',
                     marginLeft: '20px',
+                    fontWeight: 'bold'
                 }}
             >
                 {props.title}
@@ -44,17 +43,12 @@ export const MyMenu = (props) => {
                 }}
             >
                 {
-                    props.menuItems.map((item, index) => 
-                    <MenuItem key={index} onClick={handleClose}> 
-                        <Link
-                            style={{
-                                "textDecoration": "none",
-                                "color": "#5702a1",
-                            }}
-                            to={item.path}>
-                            {item.title} 
-                        </Link>
-                    </MenuItem>)
+                    props.menuItems.map((item, index) => <MenuItem key={index} onClick={handleClose}> <Link
+                        style={{
+                            "textDecoration": "none",
+                            "color": "white",
+                        }}
+                        to={item.path}> {item.title} </Link> </MenuItem>)
                 }
 
             </Menu>
