@@ -27,11 +27,15 @@ def create_defib(request):
     # return HttpResponse('Hello World!')
     user_id = User.objects.get(username=request.data['username'])
     new_defib = Defib.objects.create(
+        address = request.data['address'],
+        post_code = request.data['post_code'],
         long = request.data['long'],
         lat = request.data['lat'],
+        what3words_link = request.data['what3words_link'],
         photo_url = request.data['photo_url'],
         access = request.data['access'],
         approved = request.data['approved'],
+        comments = request.data['comments'],
         user_id = user_id
     )
     return Response({'Success': f'Created new defibrillator with id: {new_defib.id}'})
