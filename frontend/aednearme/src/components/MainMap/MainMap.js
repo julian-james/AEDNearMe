@@ -5,7 +5,7 @@ import AddIcon from '@mui/icons-material/Add';
 
 const MainMap = () => {
 
-  aedData
+ 
 
   const containerStyle = {
       width: '60vw',

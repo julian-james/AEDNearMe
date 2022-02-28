@@ -2,11 +2,12 @@ import { Typography } from '@mui/material'
 import React from 'react'
 import CprVid from '../../components/CprVid/CprVid'
 import DefibVid from '../../components/DefibVid/DefibVid'
+import { Footer } from '../../components/Footer/Footer'
 
-const CPR = () => {
+const CPRhowto = () => {
   return (
-    <div>
-        <h1>How to perform hands only CPR</h1>
+    <div style={{ padding: "40px" }}>
+        <h1>CPR</h1>
         <CprVid />
         <Typography />Step 1: If you suspect someone is having a cardiac arrest, check the person over, tilt the head back and check for breathing for 10 seconds. If the person is unresponsive, ask someone to call 999/112 and tell them to bring an AED
         <Typography />Step 2: Start hands only CPR, lock your hands together and place them by the person's chest.
@@ -21,8 +22,10 @@ const CPR = () => {
         <Typography />Step 3: AED will analyse the person's heart rhythm. Stop chest compressions and wait for the AED's instructions
         <Typography />Step 4: If shock is advised, tell everyone to stand back and clear of the person. After shock is delivered start chest compressions when told to do so by AED. 
         <Typography />Step 5: Leave the AED on as it will reanalyse heart rhythm and follow the instructions until help arrives
+
     </div>
+   
   )
 }
 
-export default CPR
+export default CPRhowto

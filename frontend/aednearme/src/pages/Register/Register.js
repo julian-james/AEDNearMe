@@ -21,7 +21,7 @@ const Register = () => {
   }  
 
   return (
-    <Paper sx={{ alignItems: 'center'}}>
+    <div style={{    padding: "40px"   }}>
         <h1>Register here</h1>
         <FormControl margin="normal">
             <FormControl>
@@ -54,7 +54,7 @@ const Register = () => {
             <Button variant="contained" onClick={newUser}>Register</Button>
             </FormControl>
         </FormControl>
-    </Paper>
+    </div>
   )
 }
 

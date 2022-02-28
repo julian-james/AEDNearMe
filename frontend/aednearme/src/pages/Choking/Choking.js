@@ -12,7 +12,7 @@ const Choking = () => {
   }
 
   return (
-    <div>
+    <div style={{ padding: "40px" }}>
         <h1>Choking</h1>
         <ChokingVid />
         <Typography />Step 1: Ask the person if they are choking. If they can cough, encourage them to cough it out. If they are unable to speak or cough, proceed to the next step

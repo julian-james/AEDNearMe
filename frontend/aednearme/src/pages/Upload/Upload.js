@@ -27,7 +27,8 @@ const Upload = () => {
                <Input type="file" />
                <Button variant="raised">Upload img</Button> 
             
-            </FormControl >
+            </FormControl>
+
             <FormControl margin="normal">
                 <TextField
                     label="Latitude"
