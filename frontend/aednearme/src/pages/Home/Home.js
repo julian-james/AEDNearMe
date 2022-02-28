@@ -10,7 +10,7 @@ const useStyles = makeStyles(() => ({
   
 }));
 
-const baseUrl = "http://127.0.0.1:8000"
+
 const Home = () => {
   const navigate = useNavigate();
 
@@ -24,24 +24,13 @@ const Home = () => {
 
   const classes = useStyles();
 
-  const [aedData, setAedData] = useState([])
-
-  useEffect(() => {
-    try{
-      axios.get(baseUrl + '/aed')
-      .then((res) => {
-        setAedData(res.data)
-      })
-    } catch (error) {
-      console.log(error)
-    }
-  }, [])
   
+
   return (
 
     <body>
       <div style={{    padding: "20px"   }}>
-        <MainMap aedData={aedData}/>
+        <MainMap />
       </div>
       <div style={{    padding: "40px"   }}>
        

@@ -6,7 +6,7 @@ from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required
 
 from .models import Defib
-
+from .serializers import DefibSerializer
 
 @api_view(['GET'])
 # @login_required
@@ -14,7 +14,9 @@ def get_all_defibs(request):
     # return HttpResponse('Hello World!')
     try:
         data = Defib.objects.all()
-        return HttpResponse(data)
+        serializers = DefibSerializer(data, many=True)
+        data = {'data': serializers.data}
+        return Response(data)
     except Exception as e:
         return Response({'Error': f"{e}"})
 
