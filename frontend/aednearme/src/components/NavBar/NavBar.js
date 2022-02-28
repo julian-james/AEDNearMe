@@ -33,7 +33,7 @@ export const NavBar = () => {
             <MyMenu title="Choking" menuItems={chokingArray} />
 
             <MyMenu title="Education Hub" menuItems={educationArray} />
-            <Link to="/register" className={classes.link}>LogIn / Register</Link>
+            <Link to="/login" className={classes.link}>Login</Link>
             
         
           </div>
@@ -92,8 +92,8 @@ const useStyles = makeStyles((theme) => ({
 
 const aedArray = [
   {
-    title: "Locations / Register new",
-    path: "/AEDmap"
+    title: "Register new",
+    path: "/upload"
   },
   {
     title: "How to use",

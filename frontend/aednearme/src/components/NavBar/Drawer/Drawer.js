@@ -80,7 +80,7 @@ function DrawerComponent() {
 
           <ListItem onClick={() => setOpenDrawer(false)}>
             <ListItemText>
-              <Link to="/register">Login / Register</Link>
+              <Link to="/login">Login </Link>
             </ListItemText>
           </ListItem>
 
@@ -110,8 +110,8 @@ export default DrawerComponent;
 
 const aedArray = [
   {
-    title: "Locations / Register new",
-    path: "/AEDmap"
+    title: "Register new",
+    path: "/upload"
   },
   {
     title: "How to use",

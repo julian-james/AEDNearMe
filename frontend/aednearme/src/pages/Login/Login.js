@@ -14,8 +14,8 @@ const Login = () => {
   }
     
   return (
-    <Paper sx={{alignItems: 'center'}}>
-        <h1>Login</h1>
+    <div style={{    padding: "40px"   }}>
+    <h1>Login</h1>
         <FormControl margin="normal">
             <FormControl>
                 <TextField 
@@ -34,7 +34,7 @@ const Login = () => {
             New user? 
             <Button variant="contained" onClick={handleRegister}>Register here!</Button>
         </FormControl>
-    </Paper>
+    </div>
     
   )
 }

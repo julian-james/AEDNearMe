@@ -1,7 +1,6 @@
 import React from "react";
 import { Route, Routes, Outlet } from 'react-router-dom';
 import Home from "./pages/Home/Home";
-import AEDmap from "./pages/AED/AEDmap";
 import AEDhowto from "./pages/AED/AEDhowto";
 import CPRhowto from "./pages/CPR/CPRhowto";
 import Quiz from "./pages/Quiz/Quiz";
@@ -22,7 +21,6 @@ function App() {
       <NavBar />
       <Routes>
           <Route path='/' element={<Home />} />
-          <Route path='/aedmap' element={<AEDmap />} />
           <Route path='/aedhowto' element={<AEDhowto />} />
           <Route path='/cprhowto' element={<CPRhowto />} />
           <Route path='/quiz' element={<Quiz />} />
