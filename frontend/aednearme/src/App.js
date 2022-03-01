@@ -14,6 +14,9 @@ import FAQ from "./pages/FAQ/FAQ";
 import { NavBar } from "./components/NavBar/NavBar";
 import { Footer } from "./components/Footer/Footer.js";
 
+import './App.css';
+
+
 
 function App() {
   return (
@@ -32,7 +35,7 @@ function App() {
           <Route path='*' element={<p>nothing to see here, move on mate.</p>} />
       </Routes>
 
-      {/* <Footer/> */}
+      <Footer />
 
       <Outlet />
     </div>

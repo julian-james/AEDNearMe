@@ -4,6 +4,7 @@ import mapStyles from './mapStyles';
 import AddIcon from '@mui/icons-material/Add';
 import axios from 'axios'
 
+
 const MainMap = () => {
   const baseUrl = "http://127.0.0.1:8000"
 
@@ -42,7 +43,6 @@ const MainMap = () => {
   const [currentLong, setCurrentLong] = useState();
 
 if('geolocation' in navigator){
-  console.log('geolocation available');
   navigator.geolocation.getCurrentPosition(position => {
     const currentLat = position.coords.latitude;
     setCurrentLat(currentLat)
@@ -54,7 +54,11 @@ if('geolocation' in navigator){
 }
 
 const position = aedData.map((aed, index) => {
-    return {lat: parseFloat(aed.lat), long: parseFloat(aed.long)}
+    return {
+      lat: parseFloat(aed.lat),
+      long: parseFloat(aed.long),
+      photo_url: aed.photo_url
+    }
 })
   
 // const aedInfo = (lat, long, key) => {
@@ -91,10 +95,12 @@ const [selectedAED, setSelectedAED] = useState(null);
               setSelectedAED(null)
             }}>
             <div>
+            <img width={"200px"} src={selectedAED.photo_url} />
               <ul>
                 <li>Latitude: {selectedAED.lat}</li>
                 <li>Longitude: {selectedAED.long}</li>
-            </ul>
+              </ul>
+            
             </div>
           </InfoWindow>
         )}
