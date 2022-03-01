@@ -44,7 +44,6 @@ export const NavBar = () => {
             </div>
    
           </div>
-          </div>
         )}
       </Toolbar>
     </AppBar>
