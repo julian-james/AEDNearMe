@@ -3,7 +3,6 @@ import React, {useState} from 'react'
 import './Quiz.css';
 import axios from 'axios'
 
-
 const Quiz = () => {
     let data 
     const baseUrl = 'http://localhost:8000/quiz/'

@@ -4,8 +4,8 @@ import mapStyles from './mapStyles';
 
 const UploadMap = () => {
     const containerStyle = {
-        width: '60vw',
-        height: '60vh',
+      width: '100%',
+      height: '70vh',
     };
     // Hard coded center at Futureproof
     const center = {
@@ -18,9 +18,6 @@ const UploadMap = () => {
     }
   
     const position = { lat: 51.496576, lng: -0.134824}
-       
-    
-   
   
   const aedInfo = () => {
       <InfoWindow position={position}>
