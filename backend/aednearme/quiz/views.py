@@ -10,9 +10,8 @@ from .serilizers import QuizSerializer
 @api_view(['GET'])
 # @login_required
 def get_quiz_questions(request, category):
-    # return HttpResponse('Hello World!')
     try:
-        data = Quiz.objects.filter(quiz_subject=category)
+        data = Quiz.objects.get(quiz_subject=category)
         serializers = QuizSerializer(data)
         data = {'data': serializers.data}
         return Response(data)

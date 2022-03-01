@@ -27,7 +27,7 @@ class Quiz(models.Model):
     incorrect_answers_6 = models.TextField()
 
     def __str__(self):
-        return f'Quiz_ID: {self.id}, Quiz_Subject: {self.quiz_subject}, Question_1: {self.question_1}, Correct_Answer_1: {self.correct_answer_1}, incorrect_answers_1: {self.incorrect_answers_1}'  
+        return f'Quiz_ID: {self.id}, Quiz_Subject: {self.quiz_subject}, question_1: {self.question_1}, Correct_Answer_1: {self.correct_answer_1}, incorrect_answers_1: {self.incorrect_answers_1}'  
 
 class User_Quiz(models.Model):
 
