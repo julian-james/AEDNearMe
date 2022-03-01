@@ -9,6 +9,10 @@ const MainMap = () => {
   const baseUrl = "http://127.0.0.1:8000"
 
   const [aedData, setAedData] = useState([])
+  const [newLat, setNewLat] = useState();
+  const [newLng, setNewLng] = useState();
+  const [currentLat, setCurrentLat] = useState();
+  const [currentLong, setCurrentLong] = useState();
 
   useEffect(() => {
     try{
@@ -27,20 +31,16 @@ const MainMap = () => {
   };
 
   // Hard coded center at Futureproof
-  // const center = {
-  //     lat: 51.4967001,
-  //     lng: -0.1356203
-  // };
+  const center = {
+      lat: newLat ? newLat : currentLat,
+      lng: newLng ? newLng : currentLong
+  };
 
   const options = {
     styles: mapStyles,
     zoomControl: true
   };
 
-
-  // Gets current position of user
-  const [currentLat, setCurrentLat] = useState();
-  const [currentLong, setCurrentLong] = useState();
 
 if('geolocation' in navigator){
   navigator.geolocation.getCurrentPosition(position => {
@@ -72,12 +72,13 @@ const position = aedData.map((aed, index) => {
 
 const [selectedAED, setSelectedAED] = useState(null);
 
+
   return (
     <LoadScript googleMapsApiKey="AIzaSyATeYFTD2ha1aawscSrtZxJfJ3m89DB_JU">
         <GoogleMap 
             mapContainerStyle={containerStyle} 
-            zoom={17} 
-            center={{lat: currentLat, lng: currentLong}} 
+            zoom={15} 
+            center={center} 
             options={options}>
           {position.map((aed) => {
             return <Marker 
@@ -93,6 +94,8 @@ const [selectedAED, setSelectedAED] = useState(null);
             position={{lat: selectedAED.lat, lng: selectedAED.long}}
             onCloseClick={() => {
               setSelectedAED(null)
+              setNewLat(selectedAED.lat)
+              setNewLng(selectedAED.long)
             }}>
             <div>
             <img width={"200px"} src={selectedAED.photo_url} />

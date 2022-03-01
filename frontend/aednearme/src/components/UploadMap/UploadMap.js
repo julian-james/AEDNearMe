@@ -8,6 +8,7 @@ const useUploadMap = () => {
   const baseUrl = "http://127.0.0.1:8000"
 
   const [aedData, setAedData] = useState([])
+  const [ markers, setMarkers ] = useState([])
 
   useEffect(() => {
     try{
@@ -27,8 +28,8 @@ const useUploadMap = () => {
 
   // Hard coded center at Futureproof
   const center = {
-      lat: 51.4967001,
-      lng: -0.1356203
+      lat: markers[0] ? markers[0].lat : 51.4967001,
+      lng: markers[0] ? markers[0].lng : -0.1356203
   };
 
   const options = {
@@ -62,7 +63,7 @@ const position = aedData.map((aed, index) => {
 
 const [selectedAED, setSelectedAED] = useState(null);
 
-const [ markers, setMarkers ] = useState([])
+
 
 
   return {
