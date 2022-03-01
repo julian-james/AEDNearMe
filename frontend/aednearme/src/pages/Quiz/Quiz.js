@@ -1,6 +1,5 @@
 import { Button, FormControl, InputLabel, MenuItem, Paper, Select } from '@material-ui/core';
 import React, {useState} from 'react'
-import './Quiz.css';
 import axios from 'axios'
 
 const Quiz = () => {
