@@ -10,6 +10,8 @@ import {
 } from "@material-ui/core";
 import { Link } from "react-router-dom";
 import MenuIcon from "@material-ui/icons/Menu";
+import Menu from '@mui/material/Menu';
+import { MenuItem } from "@mui/material";
 import MobileMenu from "../../DropdownMenu/MobileMenu";
 
 const useStyles = makeStyles(() => ({
@@ -40,17 +42,9 @@ const useStyles = makeStyles(() => ({
 
 }));
 
-
 function DrawerComponent() {
   const classes = useStyles();
   const [openDrawer, setOpenDrawer] = useState(false);
-
-  const handleLogout = () => {
-    sessionStorage.clear()
-    alert('You have been logged out')
-    window.location.reload()
-  }
-
   return (
     <>
       <Drawer className={classes.drawer}
@@ -66,41 +60,47 @@ function DrawerComponent() {
             </ListItemText>
           </ListItem>
 
-  <Divider />
+          <Divider />
 
-          <MobileMenu 
-            title="AED" 
-            menuItems={aedArray} 
-            handleClose={() => setOpenDrawer(false)} />
+          <MobileMenu title="AED" menuItems={aedArray} handleClose={() => setOpenDrawer(false)} />
 
           <Divider />
 
-          <MobileMenu 
-            title="CPR" 
-            menuItems={cprArray} 
-            handleClose={() => setOpenDrawer(false)} />
+          <MobileMenu title="CPR" menuItems={cprArray} handleClose={() => setOpenDrawer(false)} />
 
           <Divider />
 
-          <MobileMenu 
-            title="Education Hub" 
-            menuItems={educationArray} 
-            handleClose={() => setOpenDrawer(false)} />
+          <MobileMenu title="Education Hub" menuItems={educationArray} handleClose={() => setOpenDrawer(false)} />
 
           <Divider />
 
-          
           <ListItem onClick={() => setOpenDrawer(false)}>
             <ListItemText>
-
-              {
-                sessionStorage.getItem('accessToken') ?
-                <Link to="/" onClick={handleLogout} className={classes.link}>Logout</Link> :
-                <Link to="/login" className={classes.link}>Login</Link>
-              }
-
+              <Link to="/register" className={classes.link}>Signin</Link>
             </ListItemText>
           </ListItem>
+
+          {/* <ListItem onClick={() => setOpenDrawer(false)}>
+            <ListItemText>
+              <Link to="/upload">New AED?</Link>
+            </ListItemText>
+          </ListItem>
+
+          <Divider />
+
+          <ListItem onClick={() => setOpenDrawer(false)}>
+            <ListItemText>
+              <Link to="/cpr">CPR</Link>
+            </ListItemText>
+          </ListItem>
+
+          <Divider />
+
+          <ListItem onClick={() => setOpenDrawer(false)}>
+            <ListItemText>
+              <Link to="/about">FAQ</Link>
+            </ListItemText>
+          </ListItem> */}
 
         </List>
 
@@ -126,14 +126,13 @@ export default DrawerComponent;
 
 
 
-
 const aedArray = [
   {
     title: "How to use",
     path: '/aedhowto'
   },
   {
-    title: "Register new AED",
+    title: "Add NEW location",
     path: '/upload'
   }
 ]
@@ -152,17 +151,15 @@ const educationArray = [
   },
   {
     title: "AED: How to use",
-    path: "/aedhowto"
+    path: "/aed-how-to-use"
   },
   {
     title: "CPR: How to give",
     path: "/cprhowto"
   },
   {
-    title: "Choking: How to help",
-    path: "/chokinghowto"
+    title: "Choking: How to give",
+    path: "/choking"
   }
-  
-
 ]
 

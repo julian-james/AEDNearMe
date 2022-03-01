@@ -12,9 +12,7 @@ import Grid from "@material-ui/core/Grid";
 //mediaquery
 import useMediaQuery from "@material-ui/core/useMediaQuery";
 
-//sns icon
-import GitHubIcon from "@material-ui/icons/GitHub";
-import HomeIcon from "@material-ui/icons/Home";
+//sns icon 
 import MarkEmailUnreadIcon from '@mui/icons-material/MarkEmailUnread';
 import CopyrightIcon from '@mui/icons-material/Copyright';
 
@@ -31,20 +29,7 @@ const useStyles = makeStyles((theme) => ({
     //location of the image: behind / infront
     zIndex: 1302,
     padding: "5px 0",
-    // "&:before": {
-    //   width: "200%",
-    //   height: "100%",
-    //   top: 0,
-    //   left: "-100%",
-    //   backgroundColor: "#64f227",
-    //   //   64f227 blight green color 
-    //   content: '" "',
-    //   position: "absolute",
-    //   transform: ` rotateZ(-60deg)`,
-    //   [theme.breakpoints.down("sm")]: {
-    //     height: "180%",
-    //   },
-    // },
+    
   },
 
   item: {
@@ -102,7 +87,7 @@ export const Footer = ({ setValue, setSelectedIndex }) => {
               className={classes.item}
             >
               <CopyrightIcon fontSize="large"className={classes.snsIcon} />
-              <p>© 2022 <br /> by Snake in the Flask </p>
+              <p>2022 <br /> by Snake in the Flask </p>
             </Grid>
           </Grid>
         </Grid>

@@ -17,12 +17,6 @@ export const NavBar = () => {
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("md"));
 
-  const handleLogout = () => {
-    sessionStorage.clear()
-    alert('You have been logged out')
-    window.location.reload()
-  }
-
   return (
     <AppBar className={classes.appbar}
     >
@@ -31,36 +25,29 @@ export const NavBar = () => {
         {isMobile ? (
           <DrawerComponent />
         ) : (
-
           <div className={classes.root}>
-           <div className="">
-              <Link to="/" className={classes.logo}>AED <br /> nearMe </Link>
+            <div className="">
+              <Link to="/" className={classes.logo}>AED <br /> nearME </Link>
             </div>
-          <div className={classes.navlinks}>
-            <Link to="/" className={classes.link}>Home</Link>
 
-            <MyMenu title="AED" menuItems={aedArray} />
-            <MyMenu title="CPR" menuItems={cprArray} />
-            <MyMenu title="Choking" menuItems={chokingArray} />
-            
+            <div className={classes.navlinks}>
+              <Link to="/" className={classes.link} >Home</Link>
+              <MyMenu title="AED" menuItems={aedArray} />
+              <MyMenu title="CPR" menuItems={cprArray} />
+              <MyMenu title="Choking" menuItems={chokingArray} />
+              <MyMenu title="Education Hub" menuItems={educationArray} />
+              <Link to="/register" className={classes.link}>Signin</Link>
+            </div>
 
-            <MyMenu title="Education Hub" menuItems={educationArray} />
-            {
-            sessionStorage.getItem('accessToken') ?
-            <Link to="/" onClick={handleLogout} className={classes.link}>Logout</Link> :
-            <Link to="/login" className={classes.link}>Login</Link>
-            }
-           
-           
+            {/* <Link to="/quiz" className={classes.link}>Quiz</Link>
+            <Link to="/upload" className={classes.link}>New AED?</Link>
+            <Link to="/faq" className={classes.link}>FAQ</Link> */}
           </div>
         )}
       </Toolbar>
     </AppBar>
   );
 }
-
-
-
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -70,6 +57,7 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: "space-between",
     width: "100%",
   },
+
   navlinks: {
     margin: theme.spacing(2),
     display: "flex",
@@ -89,14 +77,16 @@ const useStyles = makeStyles((theme) => ({
 
   link: {
     textDecoration: "none",
-    // color: "#64f227",
     color: "#fff",
     fontWeight: "bold",
+    // color: "#64f227",
+
     // 64f227 blight green color
     fontSize: "20px",
     marginLeft: theme.spacing(5),
+    // hover navbar items changes color
     "&:hover": {
-      color: "#FFD39A",
+      color: "#000",
       borderBottom: "1px solid white",
     },
   },
@@ -104,31 +94,45 @@ const useStyles = makeStyles((theme) => ({
   appbar: {
     position: "static",
     background: '#ba181b',
+    // ba181b dark red colour
+    // black line above navbar
+    "&:before": {
+      width: "100%",
+      height: "15px",
+      top: 0,
+      backgroundColor: "#000",
+      content: '" "',
+      position: "absolute",
+      transform: ` rotateZ(180deg)`,
+    },
+
   },
 
 }));
 
+
 const aedArray = [
   {
-    title: "How to use",
-    path: '/aedhowto'
+    title: "Add new Location",
+    path: "/upload"
   },
   {
-    title: "Register new AED",
-    path: '/upload'
+    title: "How to use",
+    path: '/AEDhowto'
   }
 ]
 
 const cprArray = [
   {
     title: "How to give",
-    path: "/cprhowto"
+    path: "/CPRhowto"
   }
 ]
+
 const chokingArray = [
   {
     title: "How to help",
-    path: "/chokinghowto"
+    path: '/choking'
   }
 ]
 
@@ -147,7 +151,7 @@ const educationArray = [
   },
   {
     title: "Choking: How to help",
-    path: "/chokinghowto"
+    path: "/choking"
   }
 ]
 
