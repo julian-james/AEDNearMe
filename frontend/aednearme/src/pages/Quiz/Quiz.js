@@ -61,11 +61,13 @@ const Quiz = () => {
       console.log(e.target)
     } 
    
+
   return (
     <div style={{    padding: "40px"   }}>
     <Paper>
     <FormControl>
       <FormControl>
+
         <InputLabel>Category</InputLabel>
         <Select 
           onChange={handleCategory}
@@ -78,6 +80,7 @@ const Quiz = () => {
       </FormControl>
       <FormControl>
         <Button variant="contained" onClick={handleStart} >Start Quiz</Button>
+
       </FormControl>
     </FormControl>
     </Paper>
