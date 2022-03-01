@@ -35,7 +35,7 @@ function App() {
           <Route path='*' element={<p>nothing to see here, move on mate.</p>} />
       </Routes>
 
-      {/* <Footer /> */}
+      <Footer />
 
       <Outlet />
     </div>
