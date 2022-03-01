@@ -80,9 +80,11 @@ const Home = () => {
             An AED machine, or Automated External Defibrillator, is an essential component in first aid and safety.
             </p>
 
+
             <p className={classes.text} >
             Most of us have seen these units at airports, hospitals, schools, government buildings, nursing homes, first aid stations and even in our workplaces — But do we remember where we seen them ?
             </p>
+
 
 
 
