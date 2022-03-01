@@ -74,7 +74,7 @@ export const Footer = ({ setValue, setSelectedIndex }) => {
               className={classes.item}
             >
               <MarkEmailUnreadIcon fontSize="large" className={classes.snsIcon} />
-              <p>Contact <br /> info@gmail.com </p>
+              <p>eMail us if any query: <br /> info@AEDnearMe.com </p>
             </Grid>
 
 

@@ -9,7 +9,39 @@ const useStyles = makeStyles(() => ({
   title: {
     borderBottom: '1px solid #fff',
     paddingBottom: '5px',
-  }
+  },
+
+  text: {
+    fontSize: '16px'
+  },
+
+  btn_box:{
+    marginTop: "30px",
+    display: 'flex',
+    justifyContent: 'space-between',
+  },
+
+  primary: {
+    border: "none",
+    background: "#273746",
+    color: '#fff',
+    borderRadius: "0px",
+    padding: "10px 20px",
+    "&:hover": {
+      background: "#34495E",
+    }
+  },
+  
+  secondary: {
+    border: "none",
+    background: "aliceblue",
+    color: "#ba181b",
+    borderRadius: "0px",
+    padding: "10px 20px",
+    "&:hover": {
+      background: "aliceblue",
+    }
+  },
 
 }));
 
@@ -36,41 +68,52 @@ const Home = () => {
         <Grid container spacing={4}>
 
           <Grid item md={5} >
-            <h1 className={"display-2 mb-5 font-weight-bold", classes.title}>IN A LIFE THREATENING EMERGENCY, CALL 999</h1>
-            <p className="font-size-xl text-white-50 mb-3">
-              If you believe a person has suffered a sudden cardiac arrest (SCA) and is unresponsive and not breathing, immediately ring either 999 or 112 and ask for the ambulance service. They will advise you on what action to take and either inform you where your nearest defibrillator is located or ask if you have a defibrillator. The operator will remain on the line and ask you a series of questions which should only take you a few moments and advise you on what steps to take to assist in emergency.
+            <h1 className={classes.title}
+            >IN A LIFE THREATENING EMERGENCY, CALL 999 or 112</h1>
+            
+            <p className={classes.text}
+            >Use our location driven database to show your nearest AED.
             </p>
 
-            <Button variant="contained" 
-                  onClick={goToAEDhowTo}
-                    // component={Link}
-                    size="large"
-                    color="primary"
-                    variant="contained"
-                    className="m-2 py-3 px-5"
-                    title="View Carolina React Admin Dashboard with Material-UI Free Live Preview">How to use AED
-                    </Button>
 
-                    <Button variant="contained" onClick={goToUpload}
-                      // component={Link}
-                      size="large"
-                      color="primary"
-                      variant="contained"
-                      className="m-2 py-3 px-5"
-                      title="View Carolina React Admin Dashboard with Material-UI Free Live Preview">Add a NEW location</Button>
+            <p className={classes.text} >
+            An AED machine, or Automated External Defibrillator, is an essential component in first aid and safety.
+            </p>
 
+            <p className={classes.text} >
+            Most of us have seen these units at airports, hospitals, schools, government buildings, nursing homes, first aid stations and even in our workplaces — But do we remember where we seen them ?
+            </p>
+
+
+
+            <div className={classes.btn_box}>
+              <Button 
+                className={classes.primary}  
+                onClick={goToAEDhowTo}
+              >How to use AED</Button>
+
+              <Button 
+                className={classes.secondary} 
+                onClick={goToUpload} 
+              >Add new Location</Button>
+
+            </div>
+            
           </Grid>
 
           <Grid
             item
             md={7}
-            className="px-0 my-5 mx-auto d-flex align-items-center">
+            xs={12}
+            className=""
+            >
             <div>
               <MainMap />
             </div>
-                
           </Grid>
+
         </Grid>
+
       </Container>
           
     </Fragment>

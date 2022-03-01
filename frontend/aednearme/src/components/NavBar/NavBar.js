@@ -27,21 +27,22 @@ export const NavBar = () => {
         ) : (
           <div className={classes.root}>
             <div className="">
-              <Link to="/" className={classes.logo}>AED <br /> nearME </Link>
+              <Link to="/" className={classes.logo}>AED <br /> nearMe </Link>
             </div>
 
             <div className={classes.navlinks}>
-              <Link to="/" className={classes.link} >Home</Link>
-              <MyMenu title="AED" menuItems={aedArray} />
-              <MyMenu title="CPR" menuItems={cprArray} />
-              <MyMenu title="Choking" menuItems={chokingArray} />
-              <MyMenu title="Education Hub" menuItems={educationArray} />
-              <Link to="/register" className={classes.link}>Signin</Link>
-            </div>
 
-            {/* <Link to="/quiz" className={classes.link}>Quiz</Link>
-            <Link to="/upload" className={classes.link}>New AED?</Link>
-            <Link to="/faq" className={classes.link}>FAQ</Link> */}
+              <Link to="/" className={classes.link} >Home</Link>
+
+              <MyMenu title="AED" className={classes.mymenu} menuItems={aedArray} />
+              <MyMenu title="CPR" className={classes.mymenu} menuItems={cprArray} />
+              <MyMenu title="Choking" className={classes.mymenu} menuItems={chokingArray} />
+              <MyMenu title="Education Hub" className={classes.mymenu} menuItems={educationArray} />
+
+              <Link to="/login" className={classes.link}>Signin</Link>
+
+            </div>
+   
           </div>
         )}
       </Toolbar>
@@ -66,22 +67,37 @@ const useStyles = makeStyles((theme) => ({
   },
 
   logo: {
-    flexGrow: "1",
+    flexGrow: "10",
     cursor: "pointer",
     textDecoration: "none",
     color: "#fff",
-    fontSize: "25px",
+    fontSize: "40px",
     fontWeight: "bolder",
-    lineHeight: "0px"
+    lineHeight: "10px"
   },
 
   link: {
     textDecoration: "none",
     color: "#fff",
     fontWeight: "bold",
-    // color: "#64f227",
-
+    
     // 64f227 blight green color
+    // color: "#64f227",
+    fontSize: "20px",
+    marginLeft: theme.spacing(5),
+
+    // hover navbar items changes color
+    "&:hover": {
+      color: "#000",
+      borderBottom: "1px solid white",
+    },
+  },
+
+// DOES NOT WORK WAKAWAKAWAKA Why???
+  mymenu: {
+    textDecoration: "none",
+    color: "#fff",
+    fontWeight: "bold",
     fontSize: "20px",
     marginLeft: theme.spacing(5),
     // hover navbar items changes color
@@ -91,14 +107,16 @@ const useStyles = makeStyles((theme) => ({
     },
   },
 
+  // NavBar
   appbar: {
     position: "static",
-    background: '#ba181b',
     // ba181b dark red colour
-    // black line above navbar
+    background: '#ba181b',
+
+    // black line above NavBar
     "&:before": {
       width: "100%",
-      height: "15px",
+      height: "10px",
       top: 0,
       backgroundColor: "#000",
       content: '" "',
@@ -113,12 +131,12 @@ const useStyles = makeStyles((theme) => ({
 
 const aedArray = [
   {
-    title: "Add new Location",
-    path: "/upload"
-  },
-  {
     title: "How to use",
     path: '/AEDhowto'
+  },
+  {
+    title: "Add NEW location",
+    path: "/upload"
   }
 ]
 

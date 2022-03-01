@@ -15,6 +15,10 @@ import { MenuItem } from "@mui/material";
 import MobileMenu from "../../DropdownMenu/MobileMenu";
 
 const useStyles = makeStyles(() => ({
+  drawer: {
+    background: 'linear-gradient(190deg, #ba181b, #000)',
+    paddingBottom: '100px',
+  },
   logoBox: {
     display: "flex",
     justifyContent: "end",
@@ -47,9 +51,10 @@ function DrawerComponent() {
   const [openDrawer, setOpenDrawer] = useState(false);
   return (
     <>
-      <Drawer className={classes.drawer}
+      <Drawer 
         open={openDrawer}
         onClose={() => setOpenDrawer(false)}
+        classes={{ paper: classes.drawer }}
       >
         <List
           style={{ background: '#ba181b' }}
@@ -62,45 +67,40 @@ function DrawerComponent() {
 
           <Divider />
 
-          <MobileMenu title="AED" menuItems={aedArray} handleClose={() => setOpenDrawer(false)} />
+          <MobileMenu title="AED" 
+            menuItems={aedArray} 
+            handleClose={() => setOpenDrawer(false)} 
+          />
 
           <Divider />
 
-          <MobileMenu title="CPR" menuItems={cprArray} handleClose={() => setOpenDrawer(false)} />
+          <MobileMenu title="CPR" 
+            menuItems={cprArray} 
+            handleClose={() => setOpenDrawer(false)} 
+          />
 
           <Divider />
 
-          <MobileMenu title="Education Hub" menuItems={educationArray} handleClose={() => setOpenDrawer(false)} />
+          <MobileMenu title="Choking" 
+            menuItems={chokingArray} 
+            handleClose={() => setOpenDrawer(false)} 
+          />
 
           <Divider />
 
-          <ListItem onClick={() => setOpenDrawer(false)}>
-            <ListItemText>
-              <Link to="/register" className={classes.link}>Signin</Link>
-            </ListItemText>
-          </ListItem>
-
-          {/* <ListItem onClick={() => setOpenDrawer(false)}>
-            <ListItemText>
-              <Link to="/upload">New AED?</Link>
-            </ListItemText>
-          </ListItem>
-
-          <Divider />
-
-          <ListItem onClick={() => setOpenDrawer(false)}>
-            <ListItemText>
-              <Link to="/cpr">CPR</Link>
-            </ListItemText>
-          </ListItem>
+          <MobileMenu 
+            title="Education Hub" 
+            menuItems={educationArray} 
+            handleClose={() => setOpenDrawer(false)} 
+          />
 
           <Divider />
 
           <ListItem onClick={() => setOpenDrawer(false)}>
             <ListItemText>
-              <Link to="/about">FAQ</Link>
+              <Link to="/login" className={classes.link}>Signin</Link>
             </ListItemText>
-          </ListItem> */}
+          </ListItem>
 
         </List>
 
@@ -144,6 +144,13 @@ const cprArray = [
   }
 ]
 
+const chokingArray = [
+  {
+    title: "How to help",
+    path: "/choking"
+  }
+]
+
 const educationArray = [
   {
     title: "QUIZ",
@@ -151,14 +158,14 @@ const educationArray = [
   },
   {
     title: "AED: How to use",
-    path: "/aed-how-to-use"
+    path: "/aedhowto"
   },
   {
     title: "CPR: How to give",
     path: "/cprhowto"
   },
   {
-    title: "Choking: How to give",
+    title: "Choking: How to help",
     path: "/choking"
   }
 ]
