@@ -1,9 +1,7 @@
-import React, { useState, Fragment } from 'react'
+import React, { useState, Fragment, useEffect } from 'react'
 import axios from 'axios';
-
 import { Button, FormControl, Input, InputLabel, MenuItem, Paper, Select, TextField } from '@mui/material'
 import { Grid, Container, makeStyles } from '@material-ui/core';
-
 import UploadMap from '../../components/UploadMap/UploadMap'
 
 const useStyles = makeStyles(() => ({
@@ -88,6 +86,18 @@ const encodeImageFileAsURL = async (e) => {
           }
       })
   }
+
+  
+  const {render, markers} = UploadMap();
+  console.log(markers)
+  useEffect(() => {
+    if(markers[0]){
+        setLatitude(markers[0].lat)
+        setLongitude(markers[0].lng)
+    }  
+  }, [markers])
+
+
     
   const classes = useStyles();
 
@@ -100,6 +110,7 @@ const encodeImageFileAsURL = async (e) => {
             style={{
             paddingBottom: "100px",
             paddingTop: "20px",
+
             
             }}>
 
@@ -111,9 +122,9 @@ const encodeImageFileAsURL = async (e) => {
                     xs={12}
                     className=""
                     >
-                    <div>
-                        <UploadMap />
-                    </div>
+                    
+                      {render}
+                    
                 </Grid>
 
                 <Grid item md={4} 
@@ -137,6 +148,7 @@ const encodeImageFileAsURL = async (e) => {
                                 label="Latitude"
                                 id="latitude"
                                 type="number"
+                                value={latitude}
                                 onChange={handleLat}
                             />
                         </FormControl>
@@ -146,6 +158,7 @@ const encodeImageFileAsURL = async (e) => {
                                     label="Longitude"
                                     id="longitude"
                                     type="number"
+                                    value={longitude}
                                     onChange={handleLng}
                                 />
                         </FormControl>
