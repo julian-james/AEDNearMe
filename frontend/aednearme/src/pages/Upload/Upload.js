@@ -2,7 +2,6 @@ import { Button, FormControl, Input, InputLabel, MenuItem, Paper, Select, TextFi
 import axios from 'axios';
 import React, { useState, useCallback, useEffect } from 'react'
 import useUploadMap from '../../components/UploadMap/UploadMap';
-import UploadMap from '../../components/UploadMap/UploadMap'
 
 const Upload = () => {
    
@@ -80,6 +79,7 @@ const encodeImageFileAsURL = async (e) => {
   return (
     <div>
         <div><h1>Submit new AED</h1></div>
+    
     <Paper component="form" sx={{ p: '2px 4px', display: 'flex', alignItems: 'center' }}>
         {render}
         
