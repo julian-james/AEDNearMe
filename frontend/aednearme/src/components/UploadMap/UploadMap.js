@@ -18,9 +18,11 @@ const useUploadMap = () => {
       })
     } catch (error) {
       console.log(error)
+
     }
   }, [])
   
+
   const containerStyle = {
       width: '60vw',
       height: '60vh',
@@ -122,3 +124,4 @@ const [selectedAED, setSelectedAED] = useState(null);
 }
 
 export default useUploadMap
+

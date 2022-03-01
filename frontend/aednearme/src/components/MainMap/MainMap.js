@@ -26,9 +26,9 @@ const MainMap = () => {
   }, [])
   
   const containerStyle = {
-      width: '60vw',
-      height: '60vh',
-  };
+    width: '100%',
+    height: '70vh',
+};
 
   // Hard coded center at Futureproof
   const center = {

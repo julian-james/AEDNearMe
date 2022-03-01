@@ -1,7 +1,28 @@
-import { Button, FormControl, Input, InputLabel, MenuItem, Paper, Select, TextField } from '@mui/material'
+import React, { useState, Fragment, useEffect } from 'react'
 import axios from 'axios';
-import React, { useState, useCallback, useEffect } from 'react'
-import useUploadMap from '../../components/UploadMap/UploadMap';
+import { Button, FormControl, Input, InputLabel, MenuItem, Paper, Select, TextField } from '@mui/material'
+import { Grid, Container, makeStyles } from '@material-ui/core';
+import UploadMap from '../../components/UploadMap/UploadMap'
+
+const useStyles = makeStyles(() => ({
+  
+    btn_box:{
+      marginTop: "30px",
+      display: 'flex',
+    },
+  
+    primary: {
+      border: "none",
+      background: "#000",
+      color: '#fff',
+      borderRadius: "0px",
+      padding: "10px 20px",
+      "&:hover": {
+        background: "#34495E",
+      }
+    },
+  
+}));
 
 const Upload = () => {
    
@@ -65,6 +86,7 @@ const encodeImageFileAsURL = async (e) => {
           }
       })
   }
+
   
   const {render, markers} = useUploadMap();
   console.log(markers)
@@ -76,67 +98,114 @@ const encodeImageFileAsURL = async (e) => {
   }, [markers])
 
 
-  return (
-    <div>
-        <div><h1>Submit new AED</h1></div>
     
-    <Paper component="form" sx={{ p: '2px 4px', display: 'flex', alignItems: 'center' }}>
-        {render}
-        
-        <FormControl color="secondary">
-            <FormControl margin="normal">
-               <Input onChange={(e) => {encodeImageFileAsURL(e)}} type="file" />
-               <Button variant="raised">Upload img</Button> 
-            
-            </FormControl>
+  const classes = useStyles();
 
-            <FormControl margin="normal">
-                <TextField
-                    label="Latitude"
-                    id="latitude"
-                    type="number"
-                    value={latitude}
-                    onChange={handleLat}
-                />
-            </FormControl>
-            <FormControl margin="normal">
-                <TextField
-                        label="Longitude"
-                        id="longitude"
-                        type="number"
-                        value={longitude}
-                        onChange={handleLng}
-                    />
-            </FormControl>
-            <FormControl margin="normal">
-                <InputLabel id="access-label">
-                    Access?
-                </InputLabel>
-                <Select 
-                    id="access"
-                    label="Access?"
-                    value={access}
-                    onChange={handleAccess}>
-                    <MenuItem value="Public Access">Public Access</MenuItem>
-                    <MenuItem value="Limited Access">Limited Access</MenuItem>
-                </Select>
-            </FormControl>
-            <FormControl>
-                <TextField 
-                    label="Comments..."
-                    id="Comments"
-                    type="text"
-                    onChange={handleComments}
-                />
-            </FormControl>
-            <FormControl margin="normal">
-            <Button variant="contained" onClick={handleSubmit}>Submit</Button>
-            </FormControl>
+
+  return (
+
+    <Fragment>
+        <Container className="pb-5" 
+            spacing={1}
+            style={{
+            paddingBottom: "100px",
+            paddingTop: "20px",
+
             
-        </FormControl>
-    </Paper>
-    </div>
+            }}>
+
+            <Grid container spacing={4} spacing={10}>
+
+                <Grid
+                    item
+                    md={7}
+                    xs={12}
+                    className=""
+                    >
+                    <div>
+                      {render}
+                    </div>
+                </Grid>
+
+                <Grid item md={4} 
+                style={{ paddingTop: "5px"}}
+                    >
+
+                    <h1 className={"display-2 mb-5 font-weight-bold" }>Submit new AED</h1>
+
+                    <FormControl color="secondary" >
+
+                        <FormControl margin="dense">
+                            <Input onChange={(e) => {encodeImageFileAsURL(e)}} type="file" />
+
+                            <Button variant="raised"
+                            >Upload img</Button> 
+
+                        </FormControl>
+        
+                        <FormControl margin="dense">
+                            <TextField
+                                label="Latitude"
+                                id="latitude"
+                                type="number"
+                                value={latitude}
+                                onChange={handleLat}
+                            />
+                        </FormControl>
+
+                        <FormControl margin="dense">
+                            <TextField
+                                    label="Longitude"
+                                    id="longitude"
+                                    type="number"
+                                    value={longitude}
+                                    onChange={handleLng}
+                                />
+                        </FormControl>
+
+                        <FormControl margin="dense">
+                            <InputLabel id="access-label">
+                                Access?
+                            </InputLabel>
+                            <Select 
+                                id="access"
+                                label="Access?"
+                                value={access}
+                                onChange={handleAccess}>
+                                <MenuItem value="Public Access">Public Access</MenuItem>
+                                <MenuItem value="Limited Access">Limited Access</MenuItem>
+                            </Select>
+                        </FormControl>
+
+                        <FormControl margin='dense'>
+                            <TextField 
+                                label="Comments..."
+                                id="Comments"
+                                type="text"
+                                onChange={handleComments}
+                            />
+                        </FormControl>
+
+                        <FormControl margin='dense' className={classes.btn_box} >
+                            <Button variant="contained" 
+                            className={classes.primary}  
+                            onClick={handleSubmit}
+                            >Submit</Button>
+                        </FormControl>
+                    
+                    </FormControl>
+                </Grid>
+            </Grid>
+        </Container>
+ 
+    </Fragment>
   )
 }
 
 export default Upload
+
+
+
+
+
+
