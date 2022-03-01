@@ -1,8 +1,8 @@
-import * as React from 'react';
+import * as React from 'react'; 
+
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 import { Link } from 'react-router-dom';
-
 
 export const MyMenu = (props) => {
     const [anchorEl, setAnchorEl] = React.useState(null);
@@ -44,7 +44,9 @@ export const MyMenu = (props) => {
                 }}
             >
                 {
-                    props.menuItems.map((item, index) => <MenuItem key={index} onClick={handleClose}> <Link
+                    props.menuItems.map((item, index) => <MenuItem 
+                    key={index} 
+                    onClick={handleClose}> <Link
                         style={{
                             "textDecoration": "none",
                             "color": "white",

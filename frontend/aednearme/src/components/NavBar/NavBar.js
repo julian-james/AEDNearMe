@@ -17,12 +17,6 @@ export const NavBar = () => {
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("md"));
 
-  const handleLogout = () => {
-    sessionStorage.clear()
-    alert('You have been logged out')
-    window.location.reload()
-  }
-
   return (
     <AppBar className={classes.appbar}
     >
@@ -31,37 +25,31 @@ export const NavBar = () => {
         {isMobile ? (
           <DrawerComponent />
         ) : (
-
           <div className={classes.root}>
-           <div className="">
+            <div className="">
               <Link to="/" className={classes.logo}>AED <br /> nearMe </Link>
             </div>
-          <div className={classes.navlinks}>
-            <Link to="/" className={classes.link}>Home</Link>
 
-            <MyMenu title="AED" menuItems={aedArray} />
-            <MyMenu title="CPR" menuItems={cprArray} />
-            <MyMenu title="Choking" menuItems={chokingArray} />
-            
+            <div className={classes.navlinks}>
 
-            <MyMenu title="Education Hub" menuItems={educationArray} />
-            {
-            sessionStorage.getItem('accessToken') ?
-            <Link to="/" onClick={handleLogout} className={classes.link}>Logout</Link> :
-            <Link to="/login" className={classes.link}>Login</Link>
-            }
-           
-           
+              <Link to="/" className={classes.link} >Home</Link>
+
+              <MyMenu title="AED" className={classes.mymenu} menuItems={aedArray} />
+              <MyMenu title="CPR" className={classes.mymenu} menuItems={cprArray} />
+              <MyMenu title="Choking" className={classes.mymenu} menuItems={chokingArray} />
+              <MyMenu title="Education Hub" className={classes.mymenu} menuItems={educationArray} />
+
+              <Link to="/login" className={classes.link}>Signin</Link>
+
+            </div>
+   
           </div>
-          </div>
+          
         )}
       </Toolbar>
     </AppBar>
   );
 }
-
-
-
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -71,6 +59,7 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: "space-between",
     width: "100%",
   },
+
   navlinks: {
     margin: theme.spacing(2),
     display: "flex",
@@ -79,57 +68,90 @@ const useStyles = makeStyles((theme) => ({
   },
 
   logo: {
-    flexGrow: "1",
+    flexGrow: "10",
     cursor: "pointer",
     textDecoration: "none",
     color: "#fff",
-    fontSize: "25px",
+    fontSize: "40px",
     fontWeight: "bolder",
-    lineHeight: "0px"
+    lineHeight: "10px"
   },
 
   link: {
     textDecoration: "none",
-    // color: "#64f227",
     color: "#fff",
     fontWeight: "bold",
+    
     // 64f227 blight green color
+    // color: "#64f227",
     fontSize: "20px",
     marginLeft: theme.spacing(5),
+
+    // hover navbar items changes color
     "&:hover": {
-      color: "#FFD39A",
+      color: "#000",
       borderBottom: "1px solid white",
     },
   },
 
+// DOES NOT WORK WAKAWAKAWAKA Why???
+  mymenu: {
+    textDecoration: "none",
+    color: "#fff",
+    fontWeight: "bold",
+    fontSize: "20px",
+    marginLeft: theme.spacing(5),
+    // hover navbar items changes color
+    "&:hover": {
+      color: "#000",
+      borderBottom: "1px solid white",
+    },
+  },
+
+  // NavBar
   appbar: {
     position: "static",
+    // ba181b dark red colour
     background: '#ba181b',
+
+    // black line above NavBar
+    "&:before": {
+      width: "100%",
+      height: "10px",
+      top: 0,
+      backgroundColor: "#000",
+      content: '" "',
+      position: "absolute",
+      transform: ` rotateZ(180deg)`,
+    },
+
   },
 
 }));
 
+
 const aedArray = [
   {
     title: "How to use",
-    path: '/aedhowto'
+    path: '/AEDhowto'
   },
   {
-    title: "Register new AED",
-    path: '/upload'
+    title: "Add NEW location",
+    path: "/upload"
   }
 ]
 
 const cprArray = [
   {
     title: "How to give",
-    path: "/cprhowto"
+    path: "/CPRhowto"
   }
 ]
+
 const chokingArray = [
   {
     title: "How to help",
-    path: "/chokinghowto"
+    path: '/choking'
   }
 ]
 
@@ -148,7 +170,7 @@ const educationArray = [
   },
   {
     title: "Choking: How to help",
-    path: "/chokinghowto"
+    path: "/choking"
   }
 ]
 

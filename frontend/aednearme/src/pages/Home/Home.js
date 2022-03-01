@@ -1,13 +1,49 @@
 import React, { Fragment } from 'react';
-import { Link } from 'react-router-dom';
-import { useNavigate } from 'react-router';
-
 import { Grid, Container, Button, makeStyles } from '@material-ui/core';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-
+import { useNavigate } from 'react-router';
 import MainMap from '../../components/MainMap/MainMap';
-import './Home.css'; 
+import './Home.css';
 
+const useStyles = makeStyles(() => ({
+
+  title: {
+    borderBottom: '1px solid #fff',
+    paddingBottom: '5px',
+  },
+
+  text: {
+    fontSize: '16px'
+  },
+
+  btn_box:{
+    marginTop: "30px",
+    display: 'flex',
+    justifyContent: 'space-between',
+  },
+
+  primary: {
+    border: "none",
+    background: "#273746",
+    color: '#fff',
+    borderRadius: "0px",
+    padding: "10px 20px",
+    "&:hover": {
+      background: "#34495E",
+    }
+  },
+  
+  secondary: {
+    border: "none",
+    background: "aliceblue",
+    color: "#ba181b",
+    borderRadius: "0px",
+    padding: "10px 20px",
+    "&:hover": {
+      background: "aliceblue",
+    }
+  },
+
+}));
 
 const Home = () => {
   const navigate = useNavigate();
@@ -19,66 +55,71 @@ const Home = () => {
   const goToUpload = () => {
     navigate('/upload')
   }
-  
+
+  const classes = useStyles();
+
   return (
-    <Fragment >
-      <Container maxWidth="md" className="pb-5" style={{paddingBottom: "100px"}}>
+    <Fragment>
+
+      <Container className="pb-5" style={{
+        paddingBottom: "100px",
+        paddingTop: "20px"
+      }}>
         <Grid container spacing={4}>
+
+          <Grid item md={5} >
+            <h1 className={classes.title}
+            >IN A LIFE THREATENING EMERGENCY, CALL 999 or 112</h1>
+            
+            <p className={classes.text}
+            >Use our location driven database to show your nearest AED.
+            </p>
+
+
+            <p className={classes.text} >
+            An AED machine, or Automated External Defibrillator, is an essential component in first aid and safety.
+            </p>
+
+
+            <p className={classes.text} >
+            Most of us have seen these units at airports, hospitals, schools, government buildings, nursing homes, first aid stations and even in our workplaces — But do we remember where we seen them ?
+            </p>
+
+
+
+
+            <div className={classes.btn_box}>
+              <Button 
+                className={classes.primary}  
+                onClick={goToAEDhowTo}
+              >How to use AED</Button>
+
+              <Button 
+                className={classes.secondary} 
+                onClick={goToUpload} 
+              >Add new Location</Button>
+
+            </div>
+            
+          </Grid>
 
           <Grid
             item
-            lg={12}
-            className="px-0 mx-auto d-flex align-items-center">
-
-
-            <div className="text-center">
-              
-              <div>
-
-                <h1>IN A LIFE THREATENING EMERGENCY, CALL 999</h1>
-                <p>
-                If you believe a person has suffered a sudden cardiac arrest (SCA) and is unresponsive and not breathing, immediately ring either 999 or 112 and ask for the ambulance service. They will advise you on what action to take and either inform you where your nearest defibrillator is located or ask if you have a defibrillator. The operator will remain on the line and ask you a series of questions which should only take you a few moments and advise you on what steps to take to assist in emergency.
-                </p>
-
-                  <MainMap />
-
-                <div>
-                  
-
-                  <Button variant="contained" 
-                  onClick={goToAEDhowTo}
-                    // component={Link}
-                    size="large"
-                    color="primary"
-                    variant="contained"
-                    className="m-2 py-3 px-5"
-                    title="View Carolina React Admin Dashboard with Material-UI Free Live Preview">How to use AED
-                    </Button>
-
-                    <Button variant="contained" onClick={goToUpload}
-                      // component={Link}
-                      size="large"
-                      color="primary"
-                      variant="contained"
-                      className="m-2 py-3 px-5"
-                      title="View Carolina React Admin Dashboard with Material-UI Free Live Preview">Add a NEW location</Button>
-
-
-                 
-
-                  
-                </div>
-                <small className="d-block pt-4"></small>
-              </div>
+            md={7}
+            xs={12}
+            className=""
+            >
+            <div>
+              <MainMap />
             </div>
           </Grid>
 
-
         </Grid>
+
       </Container>
+          
     </Fragment>
   );
 };
 
 export default Home;
-

@@ -12,6 +12,7 @@ Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiY
 }
 
 ###
+GET
 
 GET http://localhost:8000/aed/
 Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjQ1OTc5NDI4LCJpYXQiOjE2NDU5NzkxMjgsImp0aSI6IjY2YTMxZGYyMDFiYzRmN2ZiOGQwYWQ2ZWE2NmVmMmIxIiwidXNlcl9pZCI6MX0.C89Z_xppHLvUB0CR0fubFRWOamOyKJQ87qvf318CUqM

@@ -1,41 +1,113 @@
 import { Typography } from '@mui/material';
 import { Grid, Container, Button, makeStyles } from '@material-ui/core';
-import React, { Fragment } from 'react';
+
 import CprVid from '../../components/CprVid/CprVid'
-import DefibVid from '../../components/DefibVid/DefibVid'
-import { Footer } from '../../components/Footer/Footer'
+
+import React, { Fragment } from 'react'
+
+import { FormControl, Input, InputLabel, MenuItem, Paper, Select, TextField } from '@mui/material'
+
+const useStyles = makeStyles(() => ({
+
+  title: {
+    paddingBottom: '5px',
+
+  },
+
+  text: {
+    fontSize: '16px'
+  },
+
+  btn_box:{
+    marginTop: "30px",
+    display: 'flex',
+    justifyContent: 'space-between',
+  },
+
+  primary: {
+    border: "none",
+    background: "#273746",
+    color: '#fff',
+    borderRadius: "0px",
+    padding: "10px 20px",
+    "&:hover": {
+      background: "#34495E",
+    }
+  },
+  
+  secondary: {
+    border: "none",
+    background: "aliceblue",
+    color: "#ba181b",
+    borderRadius: "0px",
+    padding: "10px 20px",
+    "&:hover": {
+      background: "aliceblue",
+    }
+  },
+
+}));
+
+
 
 const CPRhowto = () => {
+
+  const classes = useStyles();
+
   return (
-    <Fragment /*style={{paddingBottom: "100px"}}*/>
+    <Fragment>
 
-      <div style={{ padding: "40px" }}>
+    <Container className="pb-5" style={{
+      paddingBottom: "100px",
+      paddingTop: "20px"
+    }}>
 
-        <h1>CPR</h1>
+    <h1 className={classes.title} >The four simple steps of CPR (cardiopulmonary resuscitation) </h1>
 
-        <CprVid />
+        <Grid container spacing={4}>
 
-        <Typography />Step 1: If you suspect someone is having a cardiac arrest, check the person over, tilt the head back and check for breathing for 10 seconds. If the person is unresponsive, ask someone to call 999/112 and tell them to bring an AED
-        <Typography />Step 2: Start hands only CPR, lock your hands together and place them by the person's chest.
-        <Typography />Step 3: With straight arms, use your body to push 5-6cm in depth at a rate of 100-120 bpm. (For reference, use the beat of Staying Alive by the Bee Gees)
-        <Typography />Step 4: Keep doing hands only CPR until a defibrillator is present and the ambulance arrives. If there are multiple people around you, switch to other helpers every 5 rounds of 30 pushes to avoid fatigue. 
-        <Typography />Read more here about performing CPR at <a href="https://www.sja.org.uk/get-advice/first-aid-advice/unresponsive-casualty/how-to-do-cpr-on-an-adult/" target="_blank">St. John's Ambulance</a>
+          <Grid item md={5} >
+          
+            <p className={classes.text}>
+            Step 1: If you suspect someone is having a cardiac arrest, check the person over, tilt the head back and check for breathing for 10 seconds. If the person is unresponsive, ask someone to call 999/112 and tell them to bring an AED
+            </p>
 
-        <h1>How to use a defibrillator</h1>
+            <p className={classes.text}>
+            Step 2: Start hands only CPR, lock your hands together and place them by the person's chest.
+            </p>
 
-        <DefibVid />
+            <p className={classes.text}>
+            Step 3: With straight arms, use your body to push 5-6cm in depth at a rate of 100-120 bpm. (For reference, use the beat of Staying Alive by the Bee Gees)
+            </p>
 
-        <Typography />Step 1: Have someone continue to perform CPR and follow the instructions of the defibrillator. 
-        <Typography />Step 2: Remove clothing from person's chest and find the pads. Peel off the plastic and place the pads indicated by the pictures onto the person. (One pad of the right side under collarbone, second pad on the left side below armpit)
-        <Typography />Step 3: AED will analyse the person's heart rhythm. Stop chest compressions and wait for the AED's instructions
-        <Typography />Step 4: If shock is advised, tell everyone to stand back and clear of the person. After shock is delivered start chest compressions when told to do so by AED. 
-        <div>
-          <Grid style={{paddingBottom: "50px"}}>
-            <p>Step 5: Leave the AED on as it will reanalyse heart rhythm and follow the instructions until help arrives</p>
+            <p className={classes.text}>
+            Step 4: Keep doing hands only CPR until a defibrillator is present and the ambulance arrives. If there are multiple people around you, switch to other helpers every 5 rounds of 30 pushes to avoid fatigue. 
+            </p>
+
+            <p className={classes.text}>
+            Read more here about performing CPR at <a href="https://www.sja.org.uk/get-advice/first-aid-advice/unresponsive-casualty/how-to-do-cpr-on-an-adult/" target="_blank">St. John's Ambulance</a>
+            </p>
+
+
           </Grid>
-        </div>
-      </div>
-   </Fragment>
+
+          <Grid
+            item
+            md={7}
+            xs={12}
+            className=""
+            > 
+            <div>
+            <CprVid />
+            </div>  
+          </Grid>
+
+          
+        </Grid>
+      </Container>
+
+    </Fragment>
+      
   )
 }
 
