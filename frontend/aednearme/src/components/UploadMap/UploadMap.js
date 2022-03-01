@@ -4,7 +4,7 @@ import mapStyles from './mapStyles';
 import axios from 'axios'
 
 
-const useUploadMap = () => {
+const UploadMap = () => {
   const baseUrl = "http://127.0.0.1:8000"
 
   const [aedData, setAedData] = useState([])
@@ -123,5 +123,5 @@ const [selectedAED, setSelectedAED] = useState(null);
   )}
 }
 
-export default useUploadMap
+export default UploadMap
 

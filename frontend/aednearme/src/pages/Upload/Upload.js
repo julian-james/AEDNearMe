@@ -88,7 +88,7 @@ const encodeImageFileAsURL = async (e) => {
   }
 
   
-  const {render, markers} = useUploadMap();
+  const {render, markers} = UploadMap();
   console.log(markers)
   useEffect(() => {
     if(markers[0]){
@@ -122,9 +122,9 @@ const encodeImageFileAsURL = async (e) => {
                     xs={12}
                     className=""
                     >
-                    <div>
+                    
                       {render}
-                    </div>
+                    
                 </Grid>
 
                 <Grid item md={4} 
