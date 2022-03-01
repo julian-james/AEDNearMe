@@ -2,11 +2,11 @@ import { render, fireEvent, screen, cleanup, within } from '@testing-library/rea
 import { MemoryRouter, Router as Router } from 'react-router-dom';
 import ReactDOM from 'react-dom';
 import { createMemoryHistory } from 'history'
-import App from './App';
+import {default as FAQ} from './FAQ';
 import axios from 'axios'
 
 
-describe('App', () => {
+describe('FAQ', () => {
 
   // beforeEach(() => {
   //   render(<App />, { wrapper: MemoryRouter })
@@ -17,18 +17,18 @@ describe('App', () => {
   // Rendering
 
   it('renders welcome message', () => {
-    render(<App />, { wrapper: MemoryRouter })
+    render(<FAQ />, { wrapper: MemoryRouter })
     expect(screen.getByText('IN A LIFE THREATENING EMERGENCY, CALL 999')).toBeInTheDocument();
   });
 
   test('list contains 2 buttons', () => {
-    render(<App />, { wrapper: MemoryRouter });
+    render(<FAQ />, { wrapper: MemoryRouter });
   
     // const listElement = screen.getAllByRole('button');
-    const listItems = screen.getAllByRole('button');
+    const listItems = screen.getAllByRole('heading');
   
     
-    expect(listItems.length).toEqual(2);
+    expect(listItems.length).toEqual(1);
   });
 
 
@@ -36,14 +36,13 @@ describe('App', () => {
   // Snapshot
 
   it('should take a snapshot', () => {
-    render(<App />, { wrapper: MemoryRouter })
-    const { asFragment } = render(<App />, { wrapper: MemoryRouter })
+    render(<FAQ />, { wrapper: MemoryRouter })
+    const { asFragment } = render(<FAQ />, { wrapper: MemoryRouter })
     
-    expect(asFragment(<App />)).toMatchSnapshot()
+    expect(asFragment(<FAQ />)).toMatchSnapshot()
   })
 
   
 
   
 })
-

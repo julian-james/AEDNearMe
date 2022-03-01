@@ -67,7 +67,7 @@ const Login = () => {
             </FormControl>
         
             New user? 
-            <Button variant="contained" onClick={handleRegister}>Register here!</Button>
+            <Button variant="contained" name="register" onClick={handleRegister}>Register here!</Button>
         </FormControl>
     </div>
     

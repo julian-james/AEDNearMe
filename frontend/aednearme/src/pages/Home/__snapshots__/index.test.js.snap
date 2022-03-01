@@ -1,0 +1,70 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Home Page should take a snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="MuiContainer-root pb-5 MuiContainer-maxWidthMd"
+    style="padding-bottom: 100px;"
+  >
+    <div
+      class="MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-4"
+    >
+      <div
+        class="MuiGrid-root px-0 mx-auto d-flex align-items-center MuiGrid-item MuiGrid-grid-lg-12"
+      >
+        <div
+          class="text-center"
+        >
+          <div>
+            <h1>
+              IN A LIFE THREATENING EMERGENCY, CALL 999
+            </h1>
+            <p>
+              If you believe a person has suffered a sudden cardiac arrest (SCA) and is unresponsive and not breathing, immediately ring either 999 or 112 and ask for the ambulance service. They will advise you on what action to take and either inform you where your nearest defibrillator is located or ask if you have a defibrillator. The operator will remain on the line and ask you a series of questions which should only take you a few moments and advise you on what steps to take to assist in emergency.
+            </p>
+            <div />
+            <div>
+              Loading...
+            </div>
+            <div>
+              <button
+                class="MuiButtonBase-root MuiButton-root MuiButton-contained m-2 py-3 px-5 MuiButton-containedPrimary MuiButton-containedSizeLarge MuiButton-sizeLarge"
+                tabindex="0"
+                title="View Carolina React Admin Dashboard with Material-UI Free Live Preview"
+                type="button"
+              >
+                <span
+                  class="MuiButton-label"
+                >
+                  How to use AED
+                </span>
+                <span
+                  class="MuiTouchRipple-root"
+                />
+              </button>
+              <button
+                class="MuiButtonBase-root MuiButton-root MuiButton-contained m-2 py-3 px-5 MuiButton-containedPrimary MuiButton-containedSizeLarge MuiButton-sizeLarge"
+                tabindex="0"
+                title="View Carolina React Admin Dashboard with Material-UI Free Live Preview"
+                type="button"
+              >
+                <span
+                  class="MuiButton-label"
+                >
+                  Add a NEW location
+                </span>
+                <span
+                  class="MuiTouchRipple-root"
+                />
+              </button>
+            </div>
+            <small
+              class="d-block pt-4"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;

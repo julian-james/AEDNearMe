@@ -7,7 +7,7 @@ import { Footer } from '../../components/Footer/Footer'
 
 const CPRhowto = () => {
   return (
-    <Fragment style={{paddingBottom: "100px"}}>
+    <Fragment /*style={{paddingBottom: "100px"}}*/>
 
       <div style={{ padding: "40px" }}>
 

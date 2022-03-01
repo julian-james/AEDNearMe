@@ -95,12 +95,11 @@ const encodeImageFileAsURL = async (e) => {
                     />
             </FormControl>
             <FormControl margin="normal">
-                <InputLabel id="access-label">
+                <InputLabel id="access-label" label="Access?">
                     Access?
                 </InputLabel>
                 <Select 
                     id="access"
-                    label="Access?"
                     value={access}
                     onChange={handleAccess}>
                     <MenuItem value="Public Access">Public Access</MenuItem>
@@ -116,7 +115,7 @@ const encodeImageFileAsURL = async (e) => {
                 />
             </FormControl>
             <FormControl margin="normal">
-            <Button variant="contained" onClick={handleSubmit}>Submit</Button>
+            <Button variant="contained" label="Submit" onClick={handleSubmit}>Submit</Button>
             </FormControl>
             
         </FormControl>

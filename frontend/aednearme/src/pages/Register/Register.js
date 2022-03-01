@@ -63,8 +63,8 @@ const Register = () => {
 
   return (
     <div style={{    padding: "40px"   }}>
-        <h1>Register here</h1>
-        <FormControl margin="normal">
+        <h1 data-testid="heading">Register here</h1>
+        <FormControl margin="normal" data-testid="form">
             <FormControl>
                 <TextField
                     name="username"

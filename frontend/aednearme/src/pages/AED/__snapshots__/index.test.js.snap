@@ -1,0 +1,67 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AEDhowto should take a snapshot 1`] = `
+<DocumentFragment>
+  <div
+    style="padding: 40px;"
+  >
+    <h1>
+      AED: how to use
+    </h1>
+    <p>
+      Step 1: 
+    </p>
+    <p>
+      Step 2: 
+    </p>
+    <p>
+      Step 3: 
+    </p>
+    <p>
+      Step 4: 
+    </p>
+    <p>
+      Read more here about performing AED at 
+      <a
+        href=""
+        target="_blank"
+      >
+        Blah
+      </a>
+    </p>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`App should take a snapshot 1`] = `
+<DocumentFragment>
+  <div
+    style="padding: 40px;"
+  >
+    <h1>
+      AED: how to use
+    </h1>
+    <p>
+      Step 1: 
+    </p>
+    <p>
+      Step 2: 
+    </p>
+    <p>
+      Step 3: 
+    </p>
+    <p>
+      Step 4: 
+    </p>
+    <p>
+      Read more here about performing AED at 
+      <a
+        href=""
+        target="_blank"
+      >
+        Blah
+      </a>
+    </p>
+  </div>
+</DocumentFragment>
+`;
