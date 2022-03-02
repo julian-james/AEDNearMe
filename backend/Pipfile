@@ -11,6 +11,10 @@ djangorestframework-simplejwt = "*"
 tzdata = "*"
 pytest = "*"
 pytest-django = "*"
+gunicorn = "*"
+dj-database-url = "*"
+whitenoise = "*"
+psycopg2-binary = "*"
 
 [dev-packages]
 pytest-cov = "*"
