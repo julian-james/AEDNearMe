@@ -7,7 +7,7 @@ import PasswordStrength from '../../components/PasswordStrength/PasswordStrength
 
 const Register = () => {
 
-    const navigate = useNavigate();
+  const navigate = useNavigate();
 
   const [ username, setUsername ] = useState("")
   const [ email, setEmail ] = useState("")
@@ -26,11 +26,15 @@ const Register = () => {
 
   const newUser = async () => {
       if (password !== password2){
-          alert("Passwords do not match")
+          return alert("Passwords do not match")
+      }
+      let regex = /^.*(?=.{9,})(?=.*[a-zA-Z])(?=.*\d)(?=.*[!#$%&? "]).*$/;
+      if(!password.match(regex)){
+        return alert('Password not strong enough')
       }
 
       if(!username || !email || !firstName || !lastName || !password || !password2) {
-          alert("Please fill in all fields")
+        return alert("Please fill in all fields")
       }
       const data = {
         "username": username,
@@ -62,6 +66,8 @@ const Register = () => {
     if (result2.status == 200) {navigate('/')
     } else { alert('Server Error: failed to login') }
   }  
+
+  
 
   return (
     <div style={{    padding: "40px", paddingBottom: "100px"   }}>
@@ -120,8 +126,8 @@ const Register = () => {
             <h2>Password must contain the following</h2>
             <ul>
                 <li>Minimum 9 characters</li>
-                <li>Cannot be numrical only</li>
-                <li>Must contain at least one special charcter, upper case and lower case letter</li>
+                <li>Cannot be numerical only</li>
+                <li>Must contain at least one special charcter e.g. "!,#,$,%,&,?", upper case and lower case letters and one number</li>
                 <li>Cannot be similar to your name or common passwords such as: password, password123</li>
             </ul>
         </div>
