@@ -84,26 +84,9 @@ const useStyles = makeStyles((theme) => ({
     textDecoration: "none",
     color: "#fff",
     fontWeight: "bold",
-    
-    // 64f227 blight green color
-    // color: "#64f227",
     fontSize: "20px",
     marginLeft: theme.spacing(5),
 
-    // hover navbar items changes color
-    "&:hover": {
-      color: "#000",
-      borderBottom: "1px solid white",
-    },
-  },
-
-// DOES NOT WORK WAKAWAKAWAKA Why???
-  mymenu: {
-    textDecoration: "none",
-    color: "#fff",
-    fontWeight: "bold",
-    fontSize: "20px",
-    marginLeft: theme.spacing(5),
     // hover navbar items changes color
     "&:hover": {
       color: "#000",
@@ -116,7 +99,6 @@ const useStyles = makeStyles((theme) => ({
     position: "static",
     // ba181b dark red colour
     background: '#ba181b',
-
     // black line above NavBar
     "&:before": {
       width: "100%",
