@@ -35,6 +35,9 @@ const useStyles = makeStyles((theme) => ({
   item: {
     display: "flex",
     alignItems: "center",
+    [theme.breakpoints.down("xs")]: {
+      fontSize: "12px",
+    }
   },
 
   snsIcon: {

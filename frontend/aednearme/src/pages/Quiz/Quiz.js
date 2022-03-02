@@ -63,7 +63,7 @@ const Quiz = () => {
    
 
   return (
-    <div style={{    padding: "40px"   }}>
+    <div style={{ padding: "40px", paddingBottom: "100px" }}>
     <Paper>
     <FormControl>
       <FormControl>
@@ -92,7 +92,7 @@ const Quiz = () => {
             <form>    
 
               {
-                !questions[0] ? 'str': questions.map((question, i) => {
+                !questions[0] ? '': questions.map((question, i) => {
                   return (
                   <div>
                     <h3>
@@ -110,22 +110,17 @@ const Quiz = () => {
                     <br/>
                     <br/>
                     {i == 5 ? <Button variant='contained' type='submit' onClick={handleSubmit}>Submit</Button> :''}
-                    {/* {i == 5?<input type='submit' value='Submit' onClick={handleSubmit}/>: ''} */}
                   </div>
                    )
                   })
-                  
-
+  
               }
    
             </form>
         
           </div>
           <div>
-            <h3>
-              Results: {finalScore}/{questions.length}
-
-            </h3>
+            {finalScore ? <h3>Results: {finalScore}/{questions.length}</h3> : ""}
           </div>
          </div>
     </div>
