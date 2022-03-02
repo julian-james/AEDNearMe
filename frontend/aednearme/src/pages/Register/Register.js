@@ -16,7 +16,6 @@ const Register = () => {
   const [ firstName, setFirstName ] = useState("")
   const [ lastName, setLastName ] = useState("")
 
-
   const handleUsername = (e) => setUsername(e.target.value)
   const handleEmail = (e) => setEmail(e.target.value)
   const handlePassword = (e) => setPassword(e.target.value)
@@ -66,8 +65,6 @@ const Register = () => {
     if (result2.status == 200) {navigate('/')
     } else { alert('Server Error: failed to login') }
   }  
-
-  
 
   return (
     <div style={{    padding: "40px", paddingBottom: "100px"   }}>
