@@ -115,13 +115,13 @@ const encodeImageFileAsURL = async (e) => {
             }}>
 
             <Grid container spacing={4} spacing={10}>
-
                 <Grid
                     item
                     md={8}
                     xs={12}
                     className=""
                     >
+                    {sessionStorage.length !== 0 ? <h1>Welcome {sessionStorage.username}</h1> : <h1>Please log in to submit a new AED</h1>  }
                       {render}
                 </Grid>
 
