@@ -2,6 +2,7 @@ import { Button, FormControl, Paper, TextField } from '@mui/material'
 import React, { useState } from 'react'
 import axios from 'axios'
 import {useNavigate} from 'react-router'
+import PasswordStrength from '../../components/PasswordStrength/PasswordStrength'
 
 
 const Register = () => {
@@ -26,6 +27,10 @@ const Register = () => {
   const newUser = async () => {
       if (password !== password2){
           alert("Passwords do not match")
+      }
+
+      if(!username || !email || !firstName || !lastName || !password || !password2) {
+          alert("Please fill in all fields")
       }
       const data = {
         "username": username,
@@ -58,35 +63,36 @@ const Register = () => {
     } else { alert('Server Error: failed to login') }
   }  
 
-    
-
-
   return (
-    <div style={{    padding: "40px"   }}>
+    <div style={{    padding: "40px", paddingBottom: "100px"   }}>
         <h1>Register here</h1>
         <FormControl margin="normal">
             <FormControl>
                 <TextField
                     name="username"
                     label="Username"
+                    required={true}
                     onChange={handleUsername}/>
             </FormControl>
             <FormControl>
                 <TextField
                     name="firstName"
                     label="First Name"
+                    required={true}
                     onChange={handleFirstName}/>
             </FormControl>
             <FormControl>
                 <TextField
                     name="lastName"
                     label="Last Name"
+                    required={true}
                     onChange={handleLastName}/>
             </FormControl>
             <FormControl>
                 <TextField
                     name="email"
                     label="Email"
+                    required={true}
                     onChange={handleEmail}/> 
             </FormControl>
             <FormControl>
@@ -94,6 +100,7 @@ const Register = () => {
                     name="password"
                     label="Password"
                     type="password"
+                    required={true}
                     onChange={handlePassword}/> 
             </FormControl>
             <FormControl>
@@ -101,12 +108,23 @@ const Register = () => {
                     name="password2"
                     label="Confirm Password"
                     type="password"
+                    required={true}
                     onChange={handlePassword2}/> 
             </FormControl>
             <FormControl>
             <Button variant="contained" onClick={newUser}>Register</Button>
             </FormControl>
         </FormControl>
+        <PasswordStrength password={password}/>
+        <div>
+            <h2>Password must contain the following</h2>
+            <ul>
+                <li>Minimum 9 characters</li>
+                <li>Cannot be numrical only</li>
+                <li>Must contain at least one special charcter, upper case and lower case letter</li>
+                <li>Cannot be similar to your name or common passwords such as: password, password123</li>
+            </ul>
+        </div>
     </div>
   )
 }
