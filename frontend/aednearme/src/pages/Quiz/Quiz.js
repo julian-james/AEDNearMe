@@ -1,5 +1,5 @@
-import { Button, FormControl, InputLabel, MenuItem, Paper, Select } from '@material-ui/core';
-import React, {useState} from 'react'
+import { Button, FormControl, InputLabel, MenuItem, Paper, Select, Grid, Container } from '@material-ui/core';
+import React, {useState, Fragment} from 'react'
 import axios from 'axios'
 
 const Quiz = () => {
@@ -60,30 +60,54 @@ const Quiz = () => {
    
 
   return (
-    <div style={{ padding: "40px", paddingBottom: "100px" }}>
-    <Paper>
-    <FormControl>
-      <FormControl>
+    <>
+<Fragment>
+        <Container className="pb-5" 
+            spacing={1}
+            style={{
+            paddingBottom: "100px",
+            paddingTop: "20px",
+            }}>
 
-        <InputLabel>Category</InputLabel>
-        <Select 
-          onChange={handleCategory}
-          value={category}
-          label="Category">
-          <MenuItem value='CPR'>CPR</MenuItem>
-          <MenuItem value='AED'>AED</MenuItem>
-          <MenuItem value='Choking'>Choking</MenuItem>
-        </Select>
-      </FormControl>
-      <FormControl>
-        <Button variant="contained" onClick={handleStart} >Start Quiz</Button>
+           
 
-      </FormControl>
-    </FormControl>
-    </Paper>
-   
+                    <Paper 
+                        component="form"
+                        sx={{ p: '20px', display: 'flex', alignItems: 'center', maxWidth: 400  }}
+                        style={{ background: 'rgba(0,0,0,0.3)' }}   
+                        >
+
+                        <FormControl className="form" margin='dense' style={{  margin: 'auto' }} >
+
+                      
+                        <FormControl margin="dense">
+                        <InputLabel>Category</InputLabel>
+                          <Select 
+                            onChange={handleCategory}
+                            value={category}
+                            label="Category">
+                            <MenuItem value='CPR'>CPR</MenuItem>
+                            <MenuItem value='AED'>AED</MenuItem>
+                            <MenuItem value='Choking'>Choking</MenuItem>
+                          </Select>
+                        </FormControl>
+
+                        <FormControl margin="dense">
+                        <Button variant="contained" onClick={handleStart} >Start Quiz</Button>
+                        </FormControl>
+
+                        
+                        </FormControl>
+
+                    </Paper>
+
+                    
+
+          
+        </Container>
+ 
+    </Fragment>
     
-         <div>
          
           <div>
             <form>    
@@ -115,8 +139,8 @@ const Quiz = () => {
           <div>
             {finalScore ? <h3>Results: {finalScore}/{questions.length}</h3> : ""}
           </div>
-         </div>
-    </div>
+          </>
+         
   )
 }
 
