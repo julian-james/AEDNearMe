@@ -18,6 +18,13 @@ export const NavBar = () => {
   const isMobile = useMediaQuery(theme.breakpoints.down("md"));
 
 
+  const handleLogout = () => {
+    sessionStorage.clear()
+    alert('You have been logged out')
+    window.location.reload()
+  }
+
+
   return (
     <AppBar className={classes.appbar}
     >
@@ -39,8 +46,11 @@ export const NavBar = () => {
               <MyMenu title="CPR" className={classes.mymenu} menuItems={cprArray} />
               <MyMenu title="Choking" className={classes.mymenu} menuItems={chokingArray} />
               <MyMenu title="Education Hub" className={classes.mymenu} menuItems={educationArray} />
-
-              <Link to="/login" className={classes.link}>Signin</Link>
+              {
+              sessionStorage.getItem('accessToken') ?
+              <Link to="/" onClick={handleLogout} className={classes.link}>Logout</Link> :
+              <Link to="/login" className={classes.link}>Login</Link>
+            }
 
               
 
@@ -77,7 +87,7 @@ const useStyles = makeStyles((theme) => ({
     color: "#fff",
     fontSize: "40px",
     fontWeight: "bolder",
-    lineHeight: "10px"
+    lineHeight: "10px",
   },
 
   link: {

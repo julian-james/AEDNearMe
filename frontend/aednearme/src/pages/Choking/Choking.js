@@ -1,7 +1,8 @@
 import { Typography, Button, Grid, Container, makeStyles } from '@material-ui/core'
 import React , { Fragment } from 'react'
 import { useNavigate } from 'react-router';
-import ChokingVid from '../../components/ChokingVid/ChokingVid'
+import ChokingVid from '../../components/ChokingVid/ChokingVid';
+import './Choking.css'
 
 const useStyles = makeStyles(() => ({
 
@@ -82,7 +83,11 @@ const Choking = () => {
               </p>
 
             <h3 className={classes.text}>
-            Step 3: If they are still choking, give up to 5 abdominal thrusts: hold around the waist and pull inwards and upwards above their belly button.
+            Step 3: If they are still choking, give up to 5 abdominal thrusts: hold around the waist and pull inwards and upwards above their navel.
+            </h3>
+
+            <h3 className={classes.text}>
+            Step 4: If they are still choking and become unresponsive, follow the procedure on how to give CPR.
             </h3>
 
 
@@ -94,7 +99,7 @@ const Choking = () => {
             </div>
 
 
-            <h3>Read more here at <a href="https://www.sja.org.uk/get-advice/first-aid-advice/choking/" target="_blank">St. John's Ambulance</a>
+            <h3>Read more here at <a id="choking-link" href="https://www.sja.org.uk/get-advice/first-aid-advice/choking/" target="_blank">St. John's Ambulance</a>
             </h3>
 
           </Grid> 
