@@ -17,6 +17,7 @@ export const NavBar = () => {
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("md"));
 
+
   return (
     <AppBar className={classes.appbar}
     >
@@ -40,6 +41,8 @@ export const NavBar = () => {
               <MyMenu title="Education Hub" className={classes.mymenu} menuItems={educationArray} />
 
               <Link to="/login" className={classes.link}>Signin</Link>
+
+              
 
             </div>
    
