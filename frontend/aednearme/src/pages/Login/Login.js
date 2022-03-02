@@ -81,66 +81,62 @@ const Login = () => {
     
   return (
     <div >
-    <CssBaseline /> 
-    <Container className="pb-5" style={{
+
+      <CssBaseline /> 
+
+      <Container className="pb-5" style={{
         paddingBottom: "10px",
         paddingTop: "10px"
-      }}>
+        }}> 
 
+        <Paper 
+          component="form"
+          sx={{ p: '20px', display: 'flex', alignItems: 'center', maxWidth: 400  }}
+          style={{ background: 'rgba(0,0,0,0.3)' }}   
+          >
+          <FormControl className="form" margin='dense' style={{  margin: 'auto' }} >
 
-    <Paper 
-      component="form"
-      sx={{ p: '20px', display: 'flex', alignItems: 'center', maxWidth: 400  }}
-      style={{ background: 'rgba(0,0,0,0.3)' }}   
-      >
+            <form className={classes.root}>
 
+              <h1>Welcome back</h1>
 
-        <FormControl className="form" margin='dense' style={{  margin: 'auto' }} >
+              <TextField a
+                required
+                name="username"
+                label="Username"
+                variant="filled"
+                onChange={handleUsername} 
+              />
 
-        <form className={classes.root}>
+              <TextField 
+                name="password"
+                label="Password"
+                type="password"
+                variant="filled"
+                required
+                onChange={handlePassword}
+              />
 
-        <h1>Welcome back</h1>
-
-
-                <TextField a
-                    required                    
-                    name="username"
-                    label="Username"
-                    variant="filled"
-                    onChange={handleUsername} 
-                />
-                <TextField 
-                    name="password"
-                    label="Password"
-                    type="password"
-                    variant="filled"
-                    required
-                    onChange={handlePassword}/>
-
-            <FormControl>
+              <FormControl>
                 <Button variant="contained" onClick={handleLogin}>Login</Button>
-            </FormControl>
+              </FormControl>
         
-            New user? 
+              New user? 
        
-            <FormControl margin='dense' className={classes.btn_box} >
+              <FormControl margin='dense' className={classes.btn_box} >
                 <Button 
                 variant="contained" 
                 className={classes.primary}  
                 onClick={handleRegister}
                 >Register here!</Button>
-            </FormControl>
+              </FormControl>
 
-       
-       
             </form>
-            </FormControl>
-             </Paper>
-    </Container>
-
+          </FormControl>
+        </Paper>
+      </Container>
     </div>
-    
   )
 }
 
-export default Login
+export default Login; 
