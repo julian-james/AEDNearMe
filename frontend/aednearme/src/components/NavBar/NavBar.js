@@ -74,7 +74,7 @@ const useStyles = makeStyles((theme) => ({
     color: "#fff",
     fontSize: "40px",
     fontWeight: "bolder",
-    lineHeight: "10px"
+    lineHeight: "10px",
   },
 
   link: {
