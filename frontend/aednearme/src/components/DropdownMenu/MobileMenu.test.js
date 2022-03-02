@@ -16,9 +16,9 @@ describe('Mobile Menu', () => {
 
   // Rendering
 
-  it('renders welcome message', () => {
+  it('renders a button', () => {
     render(<MobileMenu />, { wrapper: MemoryRouter })
-    expect(screen.getByText('Choking')).toBeInTheDocument();
+    expect(screen.getByRole('button')).toBeInTheDocument();
   });
 
   test('list contains 1 buttons', () => {

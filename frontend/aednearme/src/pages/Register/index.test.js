@@ -2,13 +2,21 @@ import { default as Register } from './Register'
 import { screen, render, waitFor, fireEvent } from '@testing-library/react';
 import * as ReactRouterDom from 'react-router-dom';
 import userEvent from '@testing-library/user-event';
+import axios from 'axios'
 
 // import * as helpers from '../../helpers/requests';
 
-jest.mock("jwt-decode");
-// jest.mock('react-router-dom', () => ({
-//     useNavigate: jest.fn()
-// }));
+// jest.mock("jwt-decode");
+
+
+jest.mock("axios");
+
+const mockedUsedNavigate = jest.fn();
+
+jest.mock("react-router-dom", () => ({
+  ...jest.requireActual("react-router-dom"),
+  useNavigate: () => mockedUsedNavigate,
+}));
 
 
 describe('Register', () => {

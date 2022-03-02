@@ -5,13 +5,13 @@ import { createMemoryHistory } from 'history'
 import {default as UploadMap} from './UploadMap';
 import axios from 'axios'
 
+jest.mock("axios");
 
 describe('UploadMap', () => {
 
   // beforeEach(() => {
   //   render(<App />, { wrapper: MemoryRouter })
   // });
-
 
 
   // Rendering

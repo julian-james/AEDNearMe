@@ -1,6 +1,7 @@
 import axios from "axios";
 import { render, screen, waitFor } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
+import { MemoryRouter, Router as Router } from 'react-router-dom';
 
 import { default as Upload } from "./Upload";
 jest.mock("axios");
@@ -15,7 +16,7 @@ jest.mock("react-router-dom", () => ({
 describe("Upload", () => {
   test("render", async () => {
    
-    render(<Upload />);
+    render(<Upload />, { wrapper: MemoryRouter } );
 
     const lat = screen.getByLabelText("Latitude");
     const long = screen.getByLabelText("Longitude");
@@ -23,10 +24,10 @@ describe("Upload", () => {
     const comments = screen.getByLabelText("Comments...");
     // const sub = screen.getByLabelText("Submit");
 
-    userEvent.type(lat, "hello");
-    await waitFor(() => expect(lat.textContent).toBe("hello"));
-    userEvent.type(long, "diss");
-    await waitFor(() => expect(long.textContent).toBe("diss"));
+    userEvent.type(lat, 1234567);
+    await waitFor(() => expect(lat.textContent).toBe(1234567));
+    userEvent.type(long, 1234567);
+    await waitFor(() => expect(long.textContent).toBe(1234567));
     // userEvent.type(access, "public");
     // await waitFor(() => expect(access.textContent).toBe("public"));
     userEvent.type(comments, "asdfgh");

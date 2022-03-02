@@ -7,8 +7,12 @@ import ReactDOM from 'react-dom';
 import { createMemoryHistory } from 'history'
 
 
+const mockedUsedNavigate = jest.fn();
 
-
+jest.mock("react-router-dom", () => ({
+  ...jest.requireActual("react-router-dom"),
+  useNavigate: () => mockedUsedNavigate,
+}));
 
 
 describe('Home Page', () => {
@@ -21,7 +25,6 @@ describe('Home Page', () => {
     //     // render(<MemoryRouter><Home /></MemoryRouter>);
     // });
 
-    afterEach(cleanup)
 
     test('it renders a heading', () => {
         render(<MemoryRouter><Home /></MemoryRouter>);
@@ -34,7 +37,7 @@ describe('Home Page', () => {
 
   it('renders welcome message', () => {
     render(<Home />, { wrapper: MemoryRouter })
-    expect(screen.getByText('IN A LIFE THREATENING EMERGENCY, CALL 999')).toBeInTheDocument();
+    expect(screen.getByText('IN A LIFE THREATENING EMERGENCY, CALL 999 or 112')).toBeInTheDocument();
   });
 
 

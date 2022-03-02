@@ -4,87 +4,71 @@ import * as ReactRouterDom from 'react-router-dom';
 import { MemoryRouter, Router as Router } from 'react-router-dom';
 import userEvent from '@testing-library/user-event';
 import jwt_decode from 'jwt-decode';
+import axios from 'axios'
 
-// import * as helpers from '../../helpers/requests';
+const mockedUsedNavigate = jest.fn();
 
-jest.mock("jwt-decode", () => jest.fn());
-
-// const mockNavigate = jest.fn();
-
-// jest.mock('react-router-dom', () => ({
-//     useNavigate: () => mockNavigate
-// }));
-
-const mockNavigate = jest.fn();
-const mockContext = jest.fn()
-
-
-jest.mock('react-router-dom', () => ({
-    ...jest.requireActual('react-router-dom'),
-    useNavigate: () => mockNavigate
+jest.mock("react-router-dom", () => ({
+  ...jest.requireActual("react-router-dom"),
+  useNavigate: () => mockedUsedNavigate,
 }));
 
-jest.mock('react', ()=>({
-    ...jest.requireActual('react'),
-    useContext: ()=> mockContext
-}));
-
-
-const mockLoginResponse = {
-    data: {
-        access: 'jreogjiperog',
-        refresh: 'ewiogjwopiew'
-    }
-}
 
 describe('Login', () => {
+
     test('it renders the page', () => {
-        render(<Login />);
+        render(<Login />, {wrapper: MemoryRouter});
         const heading = screen.getByRole("heading");
-        expect(heading.textContent).toMatch("Sign-in");
+        expect(heading.textContent).toMatch("Login");
     });
 
-    // test('it allows a user to make a log in request', async () => {
-    //     render(<Login />);
-    //     const submitBtn = screen.getByRole("button", { name: "Sign In" });
-    //     const loginSpy = jest.spyOn(helpers, 'postLogin');
-    //     loginSpy.mockResolvedValue(mockLoginResponse);
-    //     userEvent.click(submitBtn);
-
-    //     await waitFor(() => {
-    //         expect(loginSpy).toHaveBeenCalled();
-    //     });
-
-    //     await waitFor(() => {
-    //         expect(jwt_decode).toHaveBeenCalled();
-    //     });
-
-    //     // await waitFor(() => {
-    //     //     expect(mockNavigate).toHaveBeenCalled();
-    //     // });
-    // });
-
     test('it navigates to the register page on button click', async () => {
-        render(<Login />);
-        const registerBtn = screen.getByRole("button", { name: "register" });
+        render(<Login />, {wrapper: MemoryRouter});
+        const registerBtn = screen.getByRole("button", { name: "Register here!" });
         userEvent.click(registerBtn);
 
-        // await waitFor(() => {
-        //     expect(mockNavigate).toHaveBeenCalled();
-        // });
     });
 
     test('it allows users to input username', () => {
-        render(<Login />);
+        render(<Login />, {wrapper: MemoryRouter});
         const usernameInput = screen.getByLabelText("Username");
         fireEvent.change(usernameInput, { target: { value: "testuser45"} });
         expect(usernameInput.value).toBe("testuser45");
     });
 
     test('it allows users to input password', () => {
-        render(<Login />);
+        render(<Login />, {wrapper: MemoryRouter});
         const passwordInput = screen.getByLabelText("Password");
         fireEvent.change(passwordInput, { target: { value: "testpassword123"} });
         expect(passwordInput.value).toBe("testpassword123");
     });
+
+
+
+    test('it renders textbox', () => {
+        render(<Login />, {wrapper: MemoryRouter})
+        const login = screen.getAllByRole('textbox');
+        expect(login).toBeInstanceOf(Array);
+    });
+    test('it renders heading', () => {
+        render(<Login />, {wrapper: MemoryRouter})
+        const login = screen.getAllByRole('heading');
+        expect(login[0]).toBeInTheDocument();
+    });
+    test('it submits a form', () => {
+        render(<Login />, {wrapper: MemoryRouter})
+        const authUser = jest.fn()
+        const submit = screen.getByTestId('submit');
+        userEvent.click(submit)
+        expect(authUser).toHaveBeenCalled();
+    });
+    test('it lets you put in a username', () => {
+        render(<Login />, {wrapper: MemoryRouter})
+
+        const username = screen.getByLabelText('Username');
+        userEvent.type(username)
+        // expect(authUser).toHaveBeenCalled();
+    });
+
+
 });

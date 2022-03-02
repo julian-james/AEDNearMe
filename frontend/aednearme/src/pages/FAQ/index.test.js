@@ -13,12 +13,11 @@ describe('FAQ', () => {
   // });
 
 
-
   // Rendering
 
   it('renders welcome message', () => {
     render(<FAQ />, { wrapper: MemoryRouter })
-    expect(screen.getByText('IN A LIFE THREATENING EMERGENCY, CALL 999')).toBeInTheDocument();
+    expect(screen.getByText('Frequently asked questions')).toBeInTheDocument();
   });
 
   test('list contains 2 buttons', () => {

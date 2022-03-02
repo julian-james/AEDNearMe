@@ -3,65 +3,64 @@
 exports[`AEDhowto should take a snapshot 1`] = `
 <DocumentFragment>
   <div
-    style="padding: 40px;"
+    class="MuiContainer-root pb-5 MuiContainer-maxWidthLg"
+    style="padding-bottom: 100px; padding-top: 20px;"
   >
-    <h1>
-      AED: how to use
+    <h1
+      class="makeStyles-title-6"
+    >
+      How to use an AED
     </h1>
-    <p>
-      Step 1: 
-    </p>
-    <p>
-      Step 2: 
-    </p>
-    <p>
-      Step 3: 
-    </p>
-    <p>
-      Step 4: 
-    </p>
-    <p>
-      Read more here about performing AED at 
-      <a
-        href=""
-        target="_blank"
+    <div
+      class="MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-4"
+    >
+      <div
+        class="MuiGrid-root MuiGrid-item MuiGrid-grid-md-5"
       >
-        Blah
-      </a>
-    </p>
-  </div>
-</DocumentFragment>
-`;
-
-exports[`App should take a snapshot 1`] = `
-<DocumentFragment>
-  <div
-    style="padding: 40px;"
-  >
-    <h1>
-      AED: how to use
-    </h1>
-    <p>
-      Step 1: 
-    </p>
-    <p>
-      Step 2: 
-    </p>
-    <p>
-      Step 3: 
-    </p>
-    <p>
-      Step 4: 
-    </p>
-    <p>
-      Read more here about performing AED at 
-      <a
-        href=""
-        target="_blank"
+        <p
+          class="makeStyles-text-7"
+        >
+          Step 1: Have someone continue to perform CPR and follow the instructions of the defibrillator.
+        </p>
+        <p
+          class="makeStyles-text-7"
+        >
+          Step 2: Remove clothing from person's chest and find the pads. Peel off the plastic and place the pads indicated by the pictures onto the person. (One pad of the right side under collarbone, second pad on the left side below armpit)
+        </p>
+        <p
+          class="makeStyles-text-7"
+        >
+          Step 3: AED will analyse the person's heart rhythm. Stop chest compressions and wait for the AED's instructions
+        </p>
+        <p
+          class="makeStyles-text-7"
+        >
+          Step 4: If shock is advised, tell everyone to stand back and clear of the person. After shock is delivered start chest compressions when told to do so by AED.
+        </p>
+        <p
+          class="makeStyles-text-7"
+        >
+          Step 5: Leave the AED on as it will reanalyse heart rhythm and follow the instructions until help arrives
+        </p>
+      </div>
+      <div
+        class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-md-7"
       >
-        Blah
-      </a>
-    </p>
+        <div>
+          <div>
+            <div
+              style="width: 640px; height: 360px;"
+            >
+              <div
+                style="width: 100%; height: 100%;"
+              >
+                <div />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </DocumentFragment>
 `;

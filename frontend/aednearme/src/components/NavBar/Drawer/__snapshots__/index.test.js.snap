@@ -3,10 +3,10 @@
 exports[`Drawer should take a snapshot 1`] = `
 <DocumentFragment>
   <div
-    class="makeStyles-logoBox-5"
+    class="makeStyles-logoBox-7"
   >
     <button
-      class="MuiButtonBase-root MuiIconButton-root makeStyles-icon-7"
+      class="MuiButtonBase-root MuiIconButton-root makeStyles-icon-9"
       sx="[object Object]"
       tabindex="0"
       type="button"
@@ -31,50 +31,7 @@ exports[`Drawer should take a snapshot 1`] = `
     </button>
     <span>
       <a
-        class="makeStyles-logo-8"
-        href="/"
-      >
-        AED 
-        <br />
-         nearME 
-      </a>
-    </span>
-  </div>
-</DocumentFragment>
-`;
-
-exports[`NavBar should take a snapshot 1`] = `
-<DocumentFragment>
-  <div
-    class="makeStyles-logoBox-5"
-  >
-    <button
-      class="MuiButtonBase-root MuiIconButton-root makeStyles-icon-7"
-      sx="[object Object]"
-      tabindex="0"
-      type="button"
-    >
-      <span
-        class="MuiIconButton-label"
-      >
-        <svg
-          aria-hidden="true"
-          class="MuiSvgIcon-root"
-          focusable="false"
-          viewBox="0 0 24 24"
-        >
-          <path
-            d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"
-          />
-        </svg>
-      </span>
-      <span
-        class="MuiTouchRipple-root"
-      />
-    </button>
-    <span>
-      <a
-        class="makeStyles-logo-8"
+        class="makeStyles-logo-10"
         href="/"
       >
         AED 

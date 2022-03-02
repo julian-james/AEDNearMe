@@ -63,7 +63,7 @@ const Login = () => {
                     onChange={handlePassword}/>
             </FormControl>
             <FormControl>
-                <Button variant="contained" onClick={handleLogin}>Login</Button>
+                <Button variant="contained" onClick={handleLogin} data-testid="submit">Login</Button>
             </FormControl>
         
             New user? 

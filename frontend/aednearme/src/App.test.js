@@ -18,7 +18,7 @@ describe('App', () => {
 
   it('renders welcome message', () => {
     render(<App />, { wrapper: MemoryRouter })
-    expect(screen.getByText('IN A LIFE THREATENING EMERGENCY, CALL 999')).toBeInTheDocument();
+    expect(screen.getByText('IN A LIFE THREATENING EMERGENCY, CALL 999 or 112')).toBeInTheDocument();
   });
 
   test('list contains 2 buttons', () => {

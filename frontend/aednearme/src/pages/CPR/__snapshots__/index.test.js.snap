@@ -1,189 +1,70 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`App should take a snapshot 1`] = `
-<DocumentFragment>
-  <div
-    style="padding: 40px;"
-  >
-    <h1>
-      CPR
-    </h1>
-    <div>
-      <h2>
-        CPR Tutorial
-      </h2>
-      <div
-        style="width: 75%; height: 360px;"
-      >
-        <div
-          style="width: 100%; height: 100%;"
-        >
-          <div />
-        </div>
-      </div>
-    </div>
-    <p
-      class="MuiTypography-root MuiTypography-body1 css-ahj2mt-MuiTypography-root"
-    />
-    Step 1: If you suspect someone is having a cardiac arrest, check the person over, tilt the head back and check for breathing for 10 seconds. If the person is unresponsive, ask someone to call 999/112 and tell them to bring an AED
-    <p
-      class="MuiTypography-root MuiTypography-body1 css-ahj2mt-MuiTypography-root"
-    />
-    Step 2: Start hands only CPR, lock your hands together and place them by the person's chest.
-    <p
-      class="MuiTypography-root MuiTypography-body1 css-ahj2mt-MuiTypography-root"
-    />
-    Step 3: With straight arms, use your body to push 5-6cm in depth at a rate of 100-120 bpm. (For reference, use the beat of Staying Alive by the Bee Gees)
-    <p
-      class="MuiTypography-root MuiTypography-body1 css-ahj2mt-MuiTypography-root"
-    />
-    Step 4: Keep doing hands only CPR until a defibrillator is present and the ambulance arrives. If there are multiple people around you, switch to other helpers every 5 rounds of 30 pushes to avoid fatigue.
-    <p
-      class="MuiTypography-root MuiTypography-body1 css-ahj2mt-MuiTypography-root"
-    />
-    Read more here about performing CPR at 
-    <a
-      href="https://www.sja.org.uk/get-advice/first-aid-advice/unresponsive-casualty/how-to-do-cpr-on-an-adult/"
-      target="_blank"
-    >
-      St. John's Ambulance
-    </a>
-    <h1>
-      How to use a defibrillator
-    </h1>
-    <div>
-      <h2>
-        CPR Tutorial
-      </h2>
-      <div
-        style="width: 640px; height: 360px;"
-      >
-        <div
-          style="width: 100%; height: 100%;"
-        >
-          <div />
-        </div>
-      </div>
-    </div>
-    <p
-      class="MuiTypography-root MuiTypography-body1 css-ahj2mt-MuiTypography-root"
-    />
-    Step 1: Have someone continue to perform CPR and follow the instructions of the defibrillator.
-    <p
-      class="MuiTypography-root MuiTypography-body1 css-ahj2mt-MuiTypography-root"
-    />
-    Step 2: Remove clothing from person's chest and find the pads. Peel off the plastic and place the pads indicated by the pictures onto the person. (One pad of the right side under collarbone, second pad on the left side below armpit)
-    <p
-      class="MuiTypography-root MuiTypography-body1 css-ahj2mt-MuiTypography-root"
-    />
-    Step 3: AED will analyse the person's heart rhythm. Stop chest compressions and wait for the AED's instructions
-    <p
-      class="MuiTypography-root MuiTypography-body1 css-ahj2mt-MuiTypography-root"
-    />
-    Step 4: If shock is advised, tell everyone to stand back and clear of the person. After shock is delivered start chest compressions when told to do so by AED.
-    <div>
-      <div
-        class="MuiGrid-root"
-        style="padding-bottom: 50px;"
-      >
-        <p>
-          Step 5: Leave the AED on as it will reanalyse heart rhythm and follow the instructions until help arrives
-        </p>
-      </div>
-    </div>
-  </div>
-</DocumentFragment>
-`;
-
 exports[`CPRhowto should take a snapshot 1`] = `
 <DocumentFragment>
   <div
-    style="padding: 40px;"
+    class="MuiContainer-root pb-5 MuiContainer-maxWidthLg"
+    style="padding-bottom: 100px; padding-top: 20px;"
   >
-    <h1>
-      CPR
-    </h1>
-    <div>
-      <h2>
-        CPR Tutorial
-      </h2>
-      <div
-        style="width: 75%; height: 360px;"
-      >
-        <div
-          style="width: 100%; height: 100%;"
-        >
-          <div />
-        </div>
-      </div>
-    </div>
-    <p
-      class="MuiTypography-root MuiTypography-body1 css-ahj2mt-MuiTypography-root"
-    />
-    Step 1: If you suspect someone is having a cardiac arrest, check the person over, tilt the head back and check for breathing for 10 seconds. If the person is unresponsive, ask someone to call 999/112 and tell them to bring an AED
-    <p
-      class="MuiTypography-root MuiTypography-body1 css-ahj2mt-MuiTypography-root"
-    />
-    Step 2: Start hands only CPR, lock your hands together and place them by the person's chest.
-    <p
-      class="MuiTypography-root MuiTypography-body1 css-ahj2mt-MuiTypography-root"
-    />
-    Step 3: With straight arms, use your body to push 5-6cm in depth at a rate of 100-120 bpm. (For reference, use the beat of Staying Alive by the Bee Gees)
-    <p
-      class="MuiTypography-root MuiTypography-body1 css-ahj2mt-MuiTypography-root"
-    />
-    Step 4: Keep doing hands only CPR until a defibrillator is present and the ambulance arrives. If there are multiple people around you, switch to other helpers every 5 rounds of 30 pushes to avoid fatigue.
-    <p
-      class="MuiTypography-root MuiTypography-body1 css-ahj2mt-MuiTypography-root"
-    />
-    Read more here about performing CPR at 
-    <a
-      href="https://www.sja.org.uk/get-advice/first-aid-advice/unresponsive-casualty/how-to-do-cpr-on-an-adult/"
-      target="_blank"
+    <h1
+      class="makeStyles-title-6"
     >
-      St. John's Ambulance
-    </a>
-    <h1>
-      How to use a defibrillator
+      The four simple steps of CPR (cardiopulmonary resuscitation) 
     </h1>
-    <div>
-      <h2>
-        CPR Tutorial
-      </h2>
+    <div
+      class="MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-4"
+    >
       <div
-        style="width: 640px; height: 360px;"
+        class="MuiGrid-root MuiGrid-item MuiGrid-grid-md-5"
       >
-        <div
-          style="width: 100%; height: 100%;"
+        <p
+          class="makeStyles-text-7"
         >
-          <div />
-        </div>
-      </div>
-    </div>
-    <p
-      class="MuiTypography-root MuiTypography-body1 css-ahj2mt-MuiTypography-root"
-    />
-    Step 1: Have someone continue to perform CPR and follow the instructions of the defibrillator.
-    <p
-      class="MuiTypography-root MuiTypography-body1 css-ahj2mt-MuiTypography-root"
-    />
-    Step 2: Remove clothing from person's chest and find the pads. Peel off the plastic and place the pads indicated by the pictures onto the person. (One pad of the right side under collarbone, second pad on the left side below armpit)
-    <p
-      class="MuiTypography-root MuiTypography-body1 css-ahj2mt-MuiTypography-root"
-    />
-    Step 3: AED will analyse the person's heart rhythm. Stop chest compressions and wait for the AED's instructions
-    <p
-      class="MuiTypography-root MuiTypography-body1 css-ahj2mt-MuiTypography-root"
-    />
-    Step 4: If shock is advised, tell everyone to stand back and clear of the person. After shock is delivered start chest compressions when told to do so by AED.
-    <div>
-      <div
-        class="MuiGrid-root"
-        style="padding-bottom: 50px;"
-      >
-        <p>
-          Step 5: Leave the AED on as it will reanalyse heart rhythm and follow the instructions until help arrives
+          Step 1: If you suspect someone is having a cardiac arrest, check the person over, tilt the head back and check for breathing for 10 seconds. If the person is unresponsive, ask someone to call 999/112 and tell them to bring an AED
         </p>
+        <p
+          class="makeStyles-text-7"
+        >
+          Step 2: Start hands only CPR, lock your hands together and place them by the person's chest.
+        </p>
+        <p
+          class="makeStyles-text-7"
+        >
+          Step 3: With straight arms, use your body to push 5-6cm in depth at a rate of 100-120 bpm. (For reference, use the beat of Staying Alive by the Bee Gees)
+        </p>
+        <p
+          class="makeStyles-text-7"
+        >
+          Step 4: Keep doing hands only CPR until a defibrillator is present and the ambulance arrives. If there are multiple people around you, switch to other helpers every 5 rounds of 30 pushes to avoid fatigue.
+        </p>
+        <p
+          class="makeStyles-text-7"
+        >
+          Read more here about performing CPR at 
+          <a
+            href="https://www.sja.org.uk/get-advice/first-aid-advice/unresponsive-casualty/how-to-do-cpr-on-an-adult/"
+            target="_blank"
+          >
+            St. John's Ambulance
+          </a>
+        </p>
+      </div>
+      <div
+        class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-md-7"
+      >
+        <div>
+          <div>
+            <div
+              style="width: 75%; height: 360px;"
+            >
+              <div
+                style="width: 100%; height: 100%;"
+              >
+                <div />
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>

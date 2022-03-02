@@ -68,9 +68,9 @@ const [selectedAED, setSelectedAED] = useState(null);
 
 
 
-  return {
+  return [
     markers,
-    render:(
+    {render:(
     <LoadScript googleMapsApiKey="AIzaSyATeYFTD2ha1aawscSrtZxJfJ3m89DB_JU">
         <GoogleMap 
             mapContainerStyle={containerStyle} 
@@ -120,7 +120,7 @@ const [selectedAED, setSelectedAED] = useState(null);
 
         
     </LoadScript>
-  )}
+  )}]
 }
 
 export default UploadMap

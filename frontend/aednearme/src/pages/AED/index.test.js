@@ -13,12 +13,11 @@ describe('AEDhowto', () => {
   // });
 
 
-
   // Rendering
 
   it('renders welcome message', () => {
     render(<AEDhowto />, { wrapper: MemoryRouter })
-    expect(screen.getByText('AED: how to use')).toBeInTheDocument();
+    expect(screen.getByText('How to use an AED')).toBeInTheDocument();
   });
 
 //   test('list contains 1 buttons', () => {

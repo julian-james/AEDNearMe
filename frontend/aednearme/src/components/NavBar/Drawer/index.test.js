@@ -24,7 +24,7 @@ describe("Drawer", () => {
     //  });
 
     it('should take a snapshot', () => {
-        render(<DrawerComponent />, { wrapper: MemoryRouter })
+        // render(<DrawerComponent />, { wrapper: MemoryRouter })
         const { asFragment } = render(<DrawerComponent />, { wrapper: MemoryRouter })
         expect(asFragment(<DrawerComponent />)).toMatchSnapshot()
       })

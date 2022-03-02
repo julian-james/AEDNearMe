@@ -13,6 +13,7 @@ describe("NavBar", () => {
      render( <NavBar />, { wrapper: MemoryRouter } );
    });
 
+
    test("It renders the nav div", () => {
        let div = screen.getByRole("banner");
        expect(div).toBeInTheDocument();
@@ -24,7 +25,7 @@ describe("NavBar", () => {
     //  });
 
     it('should take a snapshot', () => {
-        render(<NavBar />, { wrapper: MemoryRouter })
+        // render(<NavBar />, { wrapper: MemoryRouter })
         const { asFragment } = render(<NavBar />, { wrapper: MemoryRouter })
         
         expect(asFragment(<NavBar />)).toMatchSnapshot()

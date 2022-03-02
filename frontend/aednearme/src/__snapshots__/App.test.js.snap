@@ -6,19 +6,19 @@ exports[`App should take a snapshot 1`] = `
     class="App"
   >
     <header
-      class="MuiPaper-root MuiAppBar-root MuiAppBar-positionFixed MuiAppBar-colorPrimary makeStyles-appbar-21 mui-fixed MuiPaper-elevation4"
+      class="MuiPaper-root MuiAppBar-root MuiAppBar-positionFixed MuiAppBar-colorPrimary makeStyles-appbar-34 mui-fixed MuiPaper-elevation4"
     >
       <div
         class="MuiToolbar-root MuiToolbar-regular MuiToolbar-gutters"
       >
         <div
-          class="makeStyles-root-17"
+          class="makeStyles-root-29"
         >
           <div
             class=""
           >
             <a
-              class="makeStyles-logo-19"
+              class="makeStyles-logo-31"
               href="/"
             >
               AED 
@@ -27,10 +27,10 @@ exports[`App should take a snapshot 1`] = `
             </a>
           </div>
           <div
-            class="makeStyles-navlinks-18"
+            class="makeStyles-navlinks-30"
           >
             <a
-              class="makeStyles-link-20"
+              class="makeStyles-link-32"
               href="/"
             >
               Home
@@ -38,6 +38,7 @@ exports[`App should take a snapshot 1`] = `
             <div>
               <span
                 aria-haspopup="true"
+                data-testid="span"
                 id="basic-button"
                 style="color: rgb(255, 255, 255); font-size: 20px; cursor: pointer; margin-left: 20px; font-weight: bold;"
               >
@@ -47,6 +48,7 @@ exports[`App should take a snapshot 1`] = `
             <div>
               <span
                 aria-haspopup="true"
+                data-testid="span"
                 id="basic-button"
                 style="color: rgb(255, 255, 255); font-size: 20px; cursor: pointer; margin-left: 20px; font-weight: bold;"
               >
@@ -56,6 +58,7 @@ exports[`App should take a snapshot 1`] = `
             <div>
               <span
                 aria-haspopup="true"
+                data-testid="span"
                 id="basic-button"
                 style="color: rgb(255, 255, 255); font-size: 20px; cursor: pointer; margin-left: 20px; font-weight: bold;"
               >
@@ -65,6 +68,7 @@ exports[`App should take a snapshot 1`] = `
             <div>
               <span
                 aria-haspopup="true"
+                data-testid="span"
                 id="basic-button"
                 style="color: rgb(255, 255, 255); font-size: 20px; cursor: pointer; margin-left: 20px; font-weight: bold;"
               >
@@ -72,81 +76,92 @@ exports[`App should take a snapshot 1`] = `
               </span>
             </div>
             <a
-              class="makeStyles-link-20"
+              class="makeStyles-link-32"
               href="/login"
             >
-              Login
+              Signin
             </a>
           </div>
         </div>
       </div>
     </header>
     <div
-      class="MuiContainer-root pb-5 MuiContainer-maxWidthMd"
-      style="padding-bottom: 100px;"
+      class="MuiContainer-root pb-5 MuiContainer-maxWidthLg"
+      style="padding-bottom: 100px; padding-top: 20px;"
     >
       <div
         class="MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-4"
       >
         <div
-          class="MuiGrid-root px-0 mx-auto d-flex align-items-center MuiGrid-item MuiGrid-grid-lg-12"
+          class="MuiGrid-root MuiGrid-item MuiGrid-grid-md-5"
         >
-          <div
-            class="text-center"
+          <h1
+            class="makeStyles-title-35"
           >
-            <div>
-              <h1>
-                IN A LIFE THREATENING EMERGENCY, CALL 999
-              </h1>
-              <p>
-                If you believe a person has suffered a sudden cardiac arrest (SCA) and is unresponsive and not breathing, immediately ring either 999 or 112 and ask for the ambulance service. They will advise you on what action to take and either inform you where your nearest defibrillator is located or ask if you have a defibrillator. The operator will remain on the line and ask you a series of questions which should only take you a few moments and advise you on what steps to take to assist in emergency.
-              </p>
-              <div />
-              <div>
-                Loading...
-              </div>
-              <div>
-                <button
-                  class="MuiButtonBase-root MuiButton-root MuiButton-contained m-2 py-3 px-5 MuiButton-containedPrimary MuiButton-containedSizeLarge MuiButton-sizeLarge"
-                  tabindex="0"
-                  title="View Carolina React Admin Dashboard with Material-UI Free Live Preview"
-                  type="button"
-                >
-                  <span
-                    class="MuiButton-label"
-                  >
-                    How to use AED
-                  </span>
-                  <span
-                    class="MuiTouchRipple-root"
-                  />
-                </button>
-                <button
-                  class="MuiButtonBase-root MuiButton-root MuiButton-contained m-2 py-3 px-5 MuiButton-containedPrimary MuiButton-containedSizeLarge MuiButton-sizeLarge"
-                  tabindex="0"
-                  title="View Carolina React Admin Dashboard with Material-UI Free Live Preview"
-                  type="button"
-                >
-                  <span
-                    class="MuiButton-label"
-                  >
-                    Add a NEW location
-                  </span>
-                  <span
-                    class="MuiTouchRipple-root"
-                  />
-                </button>
-              </div>
-              <small
-                class="d-block pt-4"
+            IN A LIFE THREATENING EMERGENCY, CALL 999 or 112
+          </h1>
+          <p
+            class="makeStyles-text-36"
+          >
+            Use our location driven database to show your nearest AED.
+          </p>
+          <p
+            class="makeStyles-text-36"
+          >
+            An AED machine, or Automated External Defibrillator, is an essential component in first aid and safety.
+          </p>
+          <p
+            class="makeStyles-text-36"
+          >
+            Most of us have seen these units at airports, hospitals, schools, government buildings, nursing homes, first aid stations and even in our workplaces — But do we remember where we seen them ?
+          </p>
+          <div
+            class="makeStyles-btn_box-37"
+          >
+            <button
+              class="MuiButtonBase-root MuiButton-root MuiButton-text makeStyles-primary-38"
+              tabindex="0"
+              type="button"
+            >
+              <span
+                class="MuiButton-label"
+              >
+                How to use AED
+              </span>
+              <span
+                class="MuiTouchRipple-root"
               />
+            </button>
+            <button
+              class="MuiButtonBase-root MuiButton-root MuiButton-text makeStyles-secondary-39"
+              tabindex="0"
+              type="button"
+            >
+              <span
+                class="MuiButton-label"
+              >
+                Add new Location
+              </span>
+              <span
+                class="MuiTouchRipple-root"
+              />
+            </button>
+          </div>
+        </div>
+        <div
+          class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-md-7"
+        >
+          <div>
+            <div />
+            <div>
+              Loading...
             </div>
           </div>
         </div>
       </div>
     </div>
     <footer
-      class="makeStyles-footer-22"
+      class="makeStyles-footer-40"
     >
       <div
         class="MuiContainer-root MuiContainer-maxWidthLg"
@@ -158,11 +173,11 @@ exports[`App should take a snapshot 1`] = `
             class="MuiGrid-root MuiGrid-container MuiGrid-justify-content-xs-space-between"
           >
             <div
-              class="MuiGrid-root makeStyles-item-23 MuiGrid-item"
+              class="MuiGrid-root makeStyles-item-41 MuiGrid-item"
             >
               <svg
                 aria-hidden="true"
-                class="MuiSvgIcon-root MuiSvgIcon-fontSizeLarge makeStyles-snsIcon-24 css-tzssek-MuiSvgIcon-root"
+                class="MuiSvgIcon-root MuiSvgIcon-fontSizeLarge makeStyles-snsIcon-42 css-tzssek-MuiSvgIcon-root"
                 data-testid="MarkEmailUnreadIcon"
                 focusable="false"
                 viewBox="0 0 24 24"
@@ -172,17 +187,17 @@ exports[`App should take a snapshot 1`] = `
                 />
               </svg>
               <p>
-                Contact 
+                eMail us if any query: 
                 <br />
-                 info@gmail.com 
+                 info@AEDnearMe.com 
               </p>
             </div>
             <div
-              class="MuiGrid-root makeStyles-item-23 MuiGrid-item"
+              class="MuiGrid-root makeStyles-item-41 MuiGrid-item"
             >
               <svg
                 aria-hidden="true"
-                class="MuiSvgIcon-root MuiSvgIcon-fontSizeLarge makeStyles-snsIcon-24 css-tzssek-MuiSvgIcon-root"
+                class="MuiSvgIcon-root MuiSvgIcon-fontSizeLarge makeStyles-snsIcon-42 css-tzssek-MuiSvgIcon-root"
                 data-testid="CopyrightIcon"
                 focusable="false"
                 viewBox="0 0 24 24"
@@ -192,7 +207,7 @@ exports[`App should take a snapshot 1`] = `
                 />
               </svg>
               <p>
-                © 2022 
+                2022 
                 <br />
                  by Snake in the Flask 
               </p>
