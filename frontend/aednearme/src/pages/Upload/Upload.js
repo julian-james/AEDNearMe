@@ -1,26 +1,15 @@
 import React, { useState, Fragment, useEffect } from 'react'
 import axios from 'axios';
+
 import { Button, FormControl, Input, InputLabel, MenuItem, Paper, Select, TextField } from '@mui/material'
+
 import { Grid, Container, makeStyles } from '@material-ui/core';
+
 import UploadMap from '../../components/UploadMap/UploadMap'
 
 const useStyles = makeStyles(theme => ({
   
-    btn_box:{
-      marginTop: "30px",
-      display: 'flex',
-    },
-  
-    primary: {
-      border: "none",
-      background: "#000",
-      color: '#fff',
-      borderRadius: "0px",
-      padding: "10px 20px",
-      "&:hover": {
-        background: "#34495E",
-      }
-    },
+    
     root: {
         display: 'flex',
         flexDirection: 'column',
@@ -192,6 +181,8 @@ const encodeImageFileAsURL = async (e) => {
                                 />
                         </FormControl>
 
+
+
                         <FormControl margin="dense">
                             <InputLabel id="access-label">
                                 Access?
@@ -216,12 +207,13 @@ const encodeImageFileAsURL = async (e) => {
                             />
                         </FormControl>
 
-                        <FormControl margin='dense' className={classes.btn_box} >
+                        
+                        <FormControl margin='dense'>
                             <Button variant="contained" 
-                            className={classes.primary}  
                             onClick={handleSubmit}
                             >Submit</Button>
                         </FormControl>
+
 
                         </FormControl>
 

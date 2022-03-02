@@ -84,10 +84,15 @@ const Login = () => {
 
       <CssBaseline /> 
 
-      <Container className="pb-5" style={{
-        paddingBottom: "10px",
-        paddingTop: "10px"
-        }}> 
+      <Container 
+        className="pb-5" 
+        style={{
+          paddingBottom: "10px",
+          paddingTop: "10px"
+          }}
+        sx={{ display: 'flex', alignItems: 'center', maxWidth: 600  }}
+
+        > 
 
         <Paper 
           component="form"
