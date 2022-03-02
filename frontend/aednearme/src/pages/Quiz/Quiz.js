@@ -88,7 +88,7 @@ const Quiz = () => {
           }} >
 
         <Paper 
-          sx={{   maxWidth: 350  }} 
+           
           style={{ background: 'rgba(0,0,0,0)' }}   
 
           >
@@ -97,12 +97,12 @@ const Quiz = () => {
 
         <Paper
           component="form"
-          sx={{ p: '20px', display: 'flex', alignItems: 'center', maxWidth: 350 }}
+          sx={{ p: '20px', display: 'flex', alignItems: 'center' }}
           style={{ background: 'rgba(0,0,0,0.3)' }}   
           >
-          <FormControl className="form" margin='dense' >
+          <FormControl className="form" margin='dense' style={{  margin: 'auto', width: '100%' }} >
 
-            <FormControl margin='dense' sx={{ maxWidth: 350 }}             
+            <FormControl margin='dense'            
               >
     
               <FormControl>
@@ -131,6 +131,7 @@ const Quiz = () => {
             </FormControl>
           </FormControl>
         </Paper>
+        </Container>
                
                 <div>
                   <form className="pb-5" style={{
@@ -167,7 +168,7 @@ const Quiz = () => {
                 <div>
                   {finalScore ? <h3>Results: {finalScore}/{questions.length}</h3> : ""}
                 </div>
-    </Container>
+    
 
       
     </div>
