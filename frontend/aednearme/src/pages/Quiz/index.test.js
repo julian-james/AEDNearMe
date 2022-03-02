@@ -32,10 +32,10 @@ describe('Quiz', () => {
     expect(screen.getByRole("button", { name: "Start Quiz" })).toBeInTheDocument();
   });
 
-  it('renders results heading', () => {
-    render(<Quiz />, { wrapper: MemoryRouter })
-    expect(screen.getByRole("heading", { name: "Results: 0/0" })).toBeInTheDocument();
-  });
+//   it('renders results heading', () => {
+//     render(<Quiz />, { wrapper: MemoryRouter })
+//     expect(screen.getByRole("heading", { name: "Results: 0/0" })).toBeInTheDocument();
+//   });
 
   test('list contains 2 buttons', () => {
     render(<Quiz />, { wrapper: MemoryRouter });

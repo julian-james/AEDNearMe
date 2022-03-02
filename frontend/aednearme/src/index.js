@@ -8,11 +8,11 @@ import { createTheme } from '@mui/material';
 import './App.css';
 import './index.css';
 
-// const theme = createTheme({
-//   palette: {
-//     mode: 'dark',
-//   }
-// })
+const theme = createTheme({
+  palette: {
+    mode: 'dark',
+  }
+})
 
 ReactDOM.render(
   <React.StrictMode>

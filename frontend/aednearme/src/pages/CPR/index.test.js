@@ -17,7 +17,7 @@ describe('CPRhowto', () => {
 
   it('renders welcome message', () => {
     render(<CPRhowto />, { wrapper: MemoryRouter })
-    expect(screen.getByText('The four simple steps of CPR (cardiopulmonary resuscitation)')).toBeInTheDocument();
+    expect(screen.getByText('The four simple steps of CPR (Cardiopulmonary Resuscitation)')).toBeInTheDocument();
   });
 
 //   test('list contains 2 buttons', () => {

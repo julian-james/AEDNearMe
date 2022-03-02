@@ -23,7 +23,7 @@ describe('Choking', () => {
 
   it('renders welcome message', () => {
     render(<Choking />, { wrapper: MemoryRouter })
-    expect(screen.getByText('Choking')).toBeInTheDocument();
+    expect(screen.getByText('Learn first aid for someone who is choking')).toBeInTheDocument();
   });
 
   test('list contains 1 buttons', () => {

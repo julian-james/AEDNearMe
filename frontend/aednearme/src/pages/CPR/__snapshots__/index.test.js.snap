@@ -9,7 +9,7 @@ exports[`CPRhowto should take a snapshot 1`] = `
     <h1
       class="makeStyles-title-6"
     >
-      The four simple steps of CPR (cardiopulmonary resuscitation) 
+      The four simple steps of CPR (Cardiopulmonary Resuscitation) 
     </h1>
     <div
       class="MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-4"
@@ -17,37 +17,45 @@ exports[`CPRhowto should take a snapshot 1`] = `
       <div
         class="MuiGrid-root MuiGrid-item MuiGrid-grid-md-5"
       >
-        <p
+        <h3
           class="makeStyles-text-7"
         >
-          Step 1: If you suspect someone is having a cardiac arrest, check the person over, tilt the head back and check for breathing for 10 seconds. If the person is unresponsive, ask someone to call 999/112 and tell them to bring an AED
+          Step 1: If you suspect someone is having a cardiac arrest, check the person over, tilt the head back and check for breathing for 10 seconds. If the person is unresponsive, ask someone to call 999/112 and tell them to bring an AED.
+        </h3>
+        <p>
+          Never leave a victim by themself
         </p>
-        <p
+        <h3
           class="makeStyles-text-7"
         >
           Step 2: Start hands only CPR, lock your hands together and place them by the person's chest.
-        </p>
-        <p
+        </h3>
+        <h3
           class="makeStyles-text-7"
         >
-          Step 3: With straight arms, use your body to push 5-6cm in depth at a rate of 100-120 bpm. (For reference, use the beat of Staying Alive by the Bee Gees)
+          Step 3: With straight arms, use your body to push 5-6cm in depth at a rate of 100-120 bpm.
+        </h3>
+        <p>
+          For reference, use the beat of Staying Alive by the Bee Gees or Baby Shark
         </p>
-        <p
+        <h3
           class="makeStyles-text-7"
         >
-          Step 4: Keep doing hands only CPR until a defibrillator is present and the ambulance arrives. If there are multiple people around you, switch to other helpers every 5 rounds of 30 pushes to avoid fatigue.
+          Step 4: Keep doing hands only CPR until a defibrillator is present and the ambulance arrives. If there are multiple people around you.
+        </h3>
+        <p>
+          Switch to other helpers every 5 rounds of 30 pushes to avoid fatigue
         </p>
-        <p
-          class="makeStyles-text-7"
-        >
-          Read more here about performing CPR at 
+        <h3>
+          Read more here at 
           <a
             href="https://www.sja.org.uk/get-advice/first-aid-advice/unresponsive-casualty/how-to-do-cpr-on-an-adult/"
+            id="choking-link"
             target="_blank"
           >
             St. John's Ambulance
           </a>
-        </p>
+        </h3>
       </div>
       <div
         class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-md-7"
@@ -55,7 +63,7 @@ exports[`CPRhowto should take a snapshot 1`] = `
         <div>
           <div>
             <div
-              style="width: 75%; height: 360px;"
+              style="width: 100%; height: 360px;"
             >
               <div
                 style="width: 100%; height: 100%;"

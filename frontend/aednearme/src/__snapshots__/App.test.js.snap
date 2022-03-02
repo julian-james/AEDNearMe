@@ -79,7 +79,7 @@ exports[`App should take a snapshot 1`] = `
               class="makeStyles-link-32"
               href="/login"
             >
-              Signin
+              Login
             </a>
           </div>
         </div>
@@ -197,7 +197,7 @@ exports[`App should take a snapshot 1`] = `
             >
               <svg
                 aria-hidden="true"
-                class="MuiSvgIcon-root MuiSvgIcon-fontSizeLarge makeStyles-snsIcon-42 css-tzssek-MuiSvgIcon-root"
+                class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium makeStyles-snsIcon-42 css-i4bv87-MuiSvgIcon-root"
                 data-testid="CopyrightIcon"
                 focusable="false"
                 viewBox="0 0 24 24"
